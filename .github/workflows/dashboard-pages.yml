@@ -1,0 +1,38 @@
+name: Publish HR dashboard
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the dashboard file
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          sparse-checkout: dashboard/index.html
+          sparse-checkout-cone-mode: false
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Prepare the standalone page
+        run: install -D -m 644 dashboard/index.html _site/index.html
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

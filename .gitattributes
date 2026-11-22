@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Манифесты исследования используют SHA-256 точных байтов.
+data/** -text
+prompts/** -text
+
+*.docx binary
+*.pdf binary

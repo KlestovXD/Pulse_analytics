@@ -1,0 +1,605 @@
+{
+  "raw_sha256": {
+    "employees.csv": "ae9daf229295f850a05bfede40e2327c3f9321f99e3afcbc26c027965a54bcde",
+    "survey_responses.csv": "06a66c75880b6f772445475f1b732c87fe86b6feda03a566ebd574bf4ca90e90",
+    "comments.csv": "5c6c5ce0b1418c5310489aaf8a5187a0c22cc582f29ee157f537cce711c072b6",
+    "exits.csv": "121754cfcf3f222500cd62102f211e2665001ec1e7562a62b0a5e88f9066eafa",
+    "market_context.csv": "24e117ea9726fffcbe1d500772e7b192068625896207b1741b7f58de66fc5356"
+  },
+  "reference_sha256": {
+    "market_public_sources.csv": "cbdd225dab7b6951999c8910a49282c7898e975dea64fd4672b3043fcfd77ba6"
+  },
+  "encoding": "UTF-8",
+  "delimiter": ";",
+  "tables": {
+    "employees.csv": {
+      "rows": 1004,
+      "key": [
+        "employee_id"
+      ],
+      "columns": [
+        "employee_id",
+        "team_id",
+        "division",
+        "grade",
+        "work_format",
+        "hire_date",
+        "manager_id",
+        "source_record"
+      ]
+    },
+    "exits.csv": {
+      "rows": 141,
+      "key": [
+        "employee_id"
+      ],
+      "columns": [
+        "employee_id",
+        "exit_date",
+        "exit_reason",
+        "exit_type",
+        "source_record",
+        "in_annual_window"
+      ]
+    },
+    "survey_lineage.csv": {
+      "rows": 2119,
+      "key": [
+        "response_id"
+      ],
+      "columns": [
+        "response_id",
+        "employee_id",
+        "wave",
+        "source_record",
+        "submitted_at_raw",
+        "submitted_at",
+        "received_by_cutoff",
+        "q_conditions",
+        "q_conditions_input_state",
+        "q_recognition",
+        "q_recognition_input_state",
+        "q_growth",
+        "q_growth_input_state",
+        "q_manager",
+        "q_manager_input_state",
+        "q_pay",
+        "q_pay_input_state",
+        "q_balance",
+        "q_balance_input_state",
+        "q_goals",
+        "q_goals_input_state",
+        "q_tools",
+        "q_tools_input_state",
+        "q_recommend",
+        "q_recommend_input_state"
+      ]
+    },
+    "survey_employee_wave.csv": {
+      "rows": 2094,
+      "key": [
+        "employee_id",
+        "wave"
+      ],
+      "columns": [
+        "employee_id",
+        "wave",
+        "first_submitted_at",
+        "as_of",
+        "source_response_count",
+        "q_conditions",
+        "q_conditions_state",
+        "q_recognition",
+        "q_recognition_state",
+        "q_growth",
+        "q_growth_state",
+        "q_manager",
+        "q_manager_state",
+        "q_pay",
+        "q_pay_state",
+        "q_balance",
+        "q_balance_state",
+        "q_goals",
+        "q_goals_state",
+        "q_tools",
+        "q_tools_state",
+        "q_recommend",
+        "q_recommend_state",
+        "engagement",
+        "state8",
+        "recommend_signal"
+      ]
+    },
+    "survey_at_wave.csv": {
+      "rows": 2094,
+      "key": [
+        "employee_id",
+        "wave"
+      ],
+      "columns": [
+        "employee_id",
+        "wave",
+        "first_submitted_at",
+        "as_of",
+        "source_response_count",
+        "q_conditions",
+        "q_conditions_state",
+        "q_recognition",
+        "q_recognition_state",
+        "q_growth",
+        "q_growth_state",
+        "q_manager",
+        "q_manager_state",
+        "q_pay",
+        "q_pay_state",
+        "q_balance",
+        "q_balance_state",
+        "q_goals",
+        "q_goals_state",
+        "q_tools",
+        "q_tools_state",
+        "q_recommend",
+        "q_recommend_state",
+        "engagement",
+        "state8",
+        "recommend_signal"
+      ]
+    },
+    "employee_wave.csv": {
+      "rows": 3012,
+      "key": [
+        "employee_id",
+        "wave"
+      ],
+      "columns": [
+        "employee_id",
+        "team_id",
+        "division",
+        "grade",
+        "work_format",
+        "wave",
+        "wave_date",
+        "active",
+        "active_inclusive",
+        "response_received",
+        "responded",
+        "responded_inclusive"
+      ]
+    },
+    "comments.csv": {
+      "rows": 1242,
+      "key": [
+        "comment_id"
+      ],
+      "columns": [
+        "comment_id",
+        "wave",
+        "employee_id",
+        "team_id",
+        "division",
+        "submitted_at",
+        "text",
+        "source_record",
+        "submitted_at_raw",
+        "quality_rules",
+        "usable_team_text"
+      ]
+    },
+    "exit_followup_90d.csv": {
+      "rows": 1448,
+      "key": [
+        "employee_id",
+        "wave"
+      ],
+      "columns": [
+        "employee_id",
+        "wave",
+        "as_of",
+        "horizon_end",
+        "exit_within_90d"
+      ]
+    },
+    "wave_metrics.csv": {
+      "rows": 18,
+      "key": [
+        "level",
+        "group",
+        "wave"
+      ],
+      "columns": [
+        "wave",
+        "wave_date",
+        "level",
+        "group",
+        "division",
+        "active",
+        "respondents",
+        "active_inclusive",
+        "respondents_inclusive",
+        "publication_status",
+        "participation",
+        "participation_lo",
+        "participation_hi",
+        "participation_inclusive",
+        "engagement_same8_n",
+        "engagement_same8",
+        "engagement_same8_lo",
+        "engagement_same8_hi",
+        "engagement_n",
+        "engagement",
+        "engagement_lo",
+        "engagement_hi",
+        "engagement_inclusive",
+        "state8_n",
+        "state8",
+        "state8_lo",
+        "state8_hi",
+        "state8_inclusive",
+        "recommend_signal_n",
+        "recommend_signal",
+        "recommend_signal_lo",
+        "recommend_signal_hi",
+        "recommend_signal_inclusive",
+        "q_conditions_n",
+        "q_conditions",
+        "q_conditions_lo",
+        "q_conditions_hi",
+        "q_recognition_n",
+        "q_recognition",
+        "q_recognition_lo",
+        "q_recognition_hi",
+        "q_growth_n",
+        "q_growth",
+        "q_growth_lo",
+        "q_growth_hi",
+        "q_manager_n",
+        "q_manager",
+        "q_manager_lo",
+        "q_manager_hi",
+        "q_pay_n",
+        "q_pay",
+        "q_pay_lo",
+        "q_pay_hi",
+        "q_balance_n",
+        "q_balance",
+        "q_balance_lo",
+        "q_balance_hi",
+        "q_goals_n",
+        "q_goals",
+        "q_goals_lo",
+        "q_goals_hi",
+        "q_tools_n",
+        "q_tools",
+        "q_tools_lo",
+        "q_tools_hi",
+        "active_delta",
+        "respondents_delta",
+        "participation_delta",
+        "engagement_delta",
+        "state8_delta",
+        "recommend_signal_delta",
+        "q_conditions_delta",
+        "q_recognition_delta",
+        "q_growth_delta",
+        "q_manager_delta",
+        "q_pay_delta",
+        "q_balance_delta",
+        "q_goals_delta",
+        "q_tools_delta"
+      ]
+    },
+    "team_metrics.csv": {
+      "rows": 120,
+      "key": [
+        "team_id",
+        "wave"
+      ],
+      "columns": [
+        "wave",
+        "wave_date",
+        "team_id",
+        "division",
+        "active",
+        "respondents",
+        "active_inclusive",
+        "respondents_inclusive",
+        "publication_status",
+        "participation",
+        "participation_lo",
+        "participation_hi",
+        "participation_inclusive",
+        "engagement_same8_n",
+        "engagement_same8",
+        "engagement_same8_lo",
+        "engagement_same8_hi",
+        "engagement_n",
+        "engagement",
+        "engagement_lo",
+        "engagement_hi",
+        "engagement_inclusive",
+        "state8_n",
+        "state8",
+        "state8_lo",
+        "state8_hi",
+        "state8_inclusive",
+        "recommend_signal_n",
+        "recommend_signal",
+        "recommend_signal_lo",
+        "recommend_signal_hi",
+        "recommend_signal_inclusive",
+        "q_conditions_n",
+        "q_conditions",
+        "q_conditions_lo",
+        "q_conditions_hi",
+        "q_recognition_n",
+        "q_recognition",
+        "q_recognition_lo",
+        "q_recognition_hi",
+        "q_growth_n",
+        "q_growth",
+        "q_growth_lo",
+        "q_growth_hi",
+        "q_manager_n",
+        "q_manager",
+        "q_manager_lo",
+        "q_manager_hi",
+        "q_pay_n",
+        "q_pay",
+        "q_pay_lo",
+        "q_pay_hi",
+        "q_balance_n",
+        "q_balance",
+        "q_balance_lo",
+        "q_balance_hi",
+        "q_goals_n",
+        "q_goals",
+        "q_goals_lo",
+        "q_goals_hi",
+        "q_tools_n",
+        "q_tools",
+        "q_tools_lo",
+        "q_tools_hi",
+        "active_delta",
+        "respondents_delta",
+        "participation_delta",
+        "engagement_delta",
+        "state8_delta",
+        "recommend_signal_delta",
+        "q_conditions_delta",
+        "q_recognition_delta",
+        "q_growth_delta",
+        "q_manager_delta",
+        "q_pay_delta",
+        "q_balance_delta",
+        "q_goals_delta",
+        "q_tools_delta",
+        "paired_engagement_n",
+        "paired_engagement_delta",
+        "paired_engagement_lo",
+        "paired_engagement_hi",
+        "annual_period_start",
+        "annual_period_end",
+        "annual_all_exits",
+        "annual_voluntary_exits",
+        "annual_mean_headcount",
+        "annual_turnover",
+        "annual_voluntary_turnover",
+        "annual_turnover_inclusive",
+        "annual_voluntary_turnover_inclusive",
+        "attention"
+      ]
+    },
+    "annual_turnover.csv": {
+      "rows": 6,
+      "key": [
+        "level",
+        "group"
+      ],
+      "columns": [
+        "level",
+        "group",
+        "period_start",
+        "period_end",
+        "days_in_window",
+        "all_exits",
+        "voluntary_exits",
+        "person_days",
+        "mean_headcount",
+        "turnover",
+        "voluntary_turnover",
+        "person_days_inclusive",
+        "mean_headcount_inclusive",
+        "turnover_inclusive",
+        "voluntary_turnover_inclusive"
+      ]
+    },
+    "paired_dynamics.csv": {
+      "rows": 2024,
+      "key": [
+        "earlier",
+        "later",
+        "cohort",
+        "level",
+        "group",
+        "metric"
+      ],
+      "columns": [
+        "earlier",
+        "later",
+        "cohort",
+        "level",
+        "group",
+        "metric",
+        "matched_respondents",
+        "n",
+        "status",
+        "earlier_value",
+        "later_value",
+        "delta",
+        "lo",
+        "hi"
+      ]
+    },
+    "participant_composition.csv": {
+      "rows": 36,
+      "key": [
+        "wave",
+        "dimension",
+        "group"
+      ],
+      "columns": [
+        "wave",
+        "dimension",
+        "group",
+        "active",
+        "respondents",
+        "status",
+        "active_share",
+        "respondent_share",
+        "participation",
+        "participation_lo",
+        "participation_hi",
+        "respondent_share_change",
+        "representation_gap"
+      ]
+    },
+    "engagement_decomposition.csv": {
+      "rows": 3,
+      "key": [
+        "earlier",
+        "later"
+      ],
+      "columns": [
+        "observed_delta",
+        "within_division",
+        "division_mix",
+        "paired_delta",
+        "earlier_selection",
+        "later_selection",
+        "earlier",
+        "later"
+      ]
+    },
+    "exit_risk_groups.csv": {
+      "rows": 18,
+      "key": [
+        "dimension",
+        "group"
+      ],
+      "columns": [
+        "dimension",
+        "group",
+        "observations",
+        "employees",
+        "exits",
+        "risk_pct",
+        "lo",
+        "hi",
+        "status"
+      ]
+    },
+    "exit_score_differences.csv": {
+      "rows": 11,
+      "key": [
+        "metric"
+      ],
+      "columns": [
+        "metric",
+        "status",
+        "n_exits",
+        "n_no_exit",
+        "mean_exit",
+        "mean_no_exit",
+        "difference",
+        "lo",
+        "hi"
+      ]
+    },
+    "exit_logistic_models.csv": {
+      "rows": 6,
+      "key": [
+        "model"
+      ],
+      "columns": [
+        "model",
+        "metric",
+        "observations",
+        "employees",
+        "exits",
+        "employees_with_exit",
+        "slopes",
+        "unit",
+        "wave_adjusted",
+        "odds_ratio",
+        "lo",
+        "hi",
+        "status"
+      ]
+    },
+    "market_comparability.csv": {
+      "rows": 16,
+      "key": [
+        "source_record"
+      ],
+      "columns": [
+        "source_record",
+        "source",
+        "metric",
+        "scope",
+        "period",
+        "value",
+        "unit",
+        "methodology",
+        "applicability",
+        "method_difference",
+        "period_difference",
+        "population_difference",
+        "scale_difference",
+        "publication_date_available",
+        "quality_rules"
+      ]
+    },
+    "market_comparison.csv": {
+      "rows": 32,
+      "key": [
+        "comparison_id"
+      ],
+      "columns": [
+        "comparison_id",
+        "source_id",
+        "source",
+        "source_type",
+        "source_record",
+        "metric",
+        "scope",
+        "period",
+        "period_start",
+        "period_end",
+        "published",
+        "source_url",
+        "value",
+        "unit",
+        "sample",
+        "numerator",
+        "denominator",
+        "methodology",
+        "status",
+        "comparison_mode",
+        "limitations",
+        "identification",
+        "publication_timing",
+        "internal_value",
+        "internal_unit",
+        "internal_period_start",
+        "internal_period_end",
+        "internal_table",
+        "internal_numerator",
+        "internal_denominator",
+        "internal_scope",
+        "absolute_difference",
+        "difference_unit",
+        "relative_difference_pct"
+      ]
+    }
+  }
+}

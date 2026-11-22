@@ -1,8 +1,41 @@
-﻿.env
+# Секреты и локальные настройки
+.env
 .env.*
 !.env.example
+credentials.json
+secrets.json
+service-account*.json
+*.pem
+*.key
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Среда, кеши и временные файлы
 .venv/
+.uv-cache/
 __pycache__/
-*.pyc
+*.py[cod]
 .ipynb_checkpoints/
 .pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+node_modules/
+playwright-report/
+test-results/
+/_site/
+*.log
+~$*.docx
+
+# Рабочие данные и кеш повторных обращений к модели
+/data/incoming/
+/data/waves/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+/data/processed/comment_analysis/manual_followup_filled.csv
+/data/processed/comment_analysis/reviewed_labels_overlay.jsonl

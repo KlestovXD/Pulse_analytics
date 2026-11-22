@@ -1,0 +1,7 @@
+model;metric;observations;employees;exits;employees_with_exit;slopes;unit;wave_adjusted;odds_ratio;lo;hi;status
+engagement_adjusted;engagement;1432;873;55;55;2;10;True;0.8199573295;0.6882337438;0.9768919764;converged
+engagement_same8;engagement;1390;864;53;53;2;10;True;0.8202072166;0.6862495653;0.9803137402;converged
+state8_adjusted;state8;1390;864;53;53;2;10;True;0.8407730634;0.6974620292;1.013530937;converged
+recommend_adjusted;recommend_signal;1448;878;55;55;2;100;True;0.6812934206;0.4598111578;1.009459464;converged
+engagement_2026-03;engagement;742;742;23;23;1;10;False;0.8311803873;0.6192798471;1.115587467;converged
+engagement_2026-06;engagement;690;690;32;32;1;10;False;0.8118239824;0.6581785551;1.001336451;converged

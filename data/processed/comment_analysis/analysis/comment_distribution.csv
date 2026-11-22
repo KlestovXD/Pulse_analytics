@@ -1,0 +1,1081 @@
+﻿level;wave;division;dimension;category;comments;unique_confirmed_authors;substantive_denominator;share;status
+all;;;topic;оплата;228;201;1216;0.1875;available
+all;;;topic;признание;170;159;1216;0.13980263157894737;available
+all;;;topic;развитие;213;188;1216;0.17516447368421054;available
+all;;;topic;руководитель;223;207;1216;0.18338815789473684;available
+all;;;topic;нагрузка;212;189;1216;0.17434210526315788;available
+all;;;topic;условия;61;58;1216;0.05016447368421053;available
+all;;;topic;цели;134;124;1216;0.11019736842105263;available
+all;;;topic;инструменты;91;86;1216;0.07483552631578948;available
+all;;;topic;адаптация;147;141;1216;0.12088815789473684;available
+all;;;topic;другое;122;109;1216;0.10032894736842106;available
+all;;;topic_in_problem_comment;оплата;133;126;1216;0.109375;available
+all;;;topic_in_problem_comment;признание;92;90;1216;0.0756578947368421;available
+all;;;topic_in_problem_comment;развитие;80;76;1216;0.06578947368421052;available
+all;;;topic_in_problem_comment;руководитель;74;72;1216;0.06085526315789474;available
+all;;;topic_in_problem_comment;нагрузка;132;120;1216;0.10855263157894737;available
+all;;;topic_in_problem_comment;условия;23;22;1216;0.018914473684210526;available
+all;;;topic_in_problem_comment;цели;50;47;1216;0.04111842105263158;available
+all;;;topic_in_problem_comment;инструменты;44;42;1216;0.03618421052631579;available
+all;;;topic_in_problem_comment;адаптация;63;61;1216;0.05180921052631579;available
+all;;;topic_in_problem_comment;другое;0;0;1216;0.0;available
+all;;;sentiment;положительная;617;448;1216;0.5074013157894737;available
+all;;;sentiment;отрицательная;485;388;1216;0.3988486842105263;available
+all;;;sentiment;нейтральная;96;92;1216;0.07894736842105263;available
+all;;;sentiment;смешанная;18;18;1216;0.014802631578947368;available
+all;;;sentiment;неопределенная;0;0;1216;0.0;available
+all;;;severity;отсутствует;713;502;1216;0.5863486842105263;available
+all;;;severity;низкая;31;31;1216;0.02549342105263158;available
+all;;;severity;средняя;458;371;1216;0.37664473684210525;available
+all;;;severity;высокая;14;14;1216;0.011513157894736841;available
+all;;;severity;критическая;0;0;1216;0.0;available
+division;;ИТ-платформа;topic;оплата;45;41;240;0.1875;available
+division;;ИТ-платформа;topic;признание;36;33;240;0.15;available
+division;;ИТ-платформа;topic;развитие;41;36;240;0.17083333333333334;available
+division;;ИТ-платформа;topic;руководитель;37;35;240;0.15416666666666667;available
+division;;ИТ-платформа;topic;нагрузка;45;43;240;0.1875;available
+division;;ИТ-платформа;topic;условия;11;10;240;0.04583333333333333;available
+division;;ИТ-платформа;topic;цели;29;29;240;0.12083333333333333;available
+division;;ИТ-платформа;topic;инструменты;24;24;240;0.1;available
+division;;ИТ-платформа;topic;адаптация;33;33;240;0.1375;available
+division;;ИТ-платформа;topic;другое;19;18;240;0.07916666666666666;available
+division;;ИТ-платформа;topic_in_problem_comment;оплата;29;28;240;0.12083333333333333;available
+division;;ИТ-платформа;topic_in_problem_comment;признание;24;23;240;0.1;available
+division;;ИТ-платформа;topic_in_problem_comment;развитие;20;19;240;0.08333333333333333;available
+division;;ИТ-платформа;topic_in_problem_comment;руководитель;13;12;240;0.05416666666666667;available
+division;;ИТ-платформа;topic_in_problem_comment;нагрузка;30;30;240;0.125;available
+division;;ИТ-платформа;topic_in_problem_comment;условия;;;240;;suppressed_cell
+division;;ИТ-платформа;topic_in_problem_comment;цели;10;10;240;0.041666666666666664;available
+division;;ИТ-платформа;topic_in_problem_comment;инструменты;13;13;240;0.05416666666666667;available
+division;;ИТ-платформа;topic_in_problem_comment;адаптация;16;16;240;0.06666666666666667;available
+division;;ИТ-платформа;topic_in_problem_comment;другое;0;0;240;0.0;available
+division;;ИТ-платформа;sentiment;положительная;108;84;240;0.45;available
+division;;ИТ-платформа;sentiment;отрицательная;112;92;240;0.4666666666666667;available
+division;;ИТ-платформа;sentiment;нейтральная;;;240;;suppressed_complement
+division;;ИТ-платформа;sentiment;смешанная;;;240;;suppressed_cell
+division;;ИТ-платформа;sentiment;неопределенная;0;0;240;0.0;available
+division;;ИТ-платформа;severity;отсутствует;124;94;240;0.5166666666666667;available
+division;;ИТ-платформа;severity;низкая;;;240;;suppressed_cell
+division;;ИТ-платформа;severity;средняя;110;91;240;0.4583333333333333;available
+division;;ИТ-платформа;severity;высокая;;;240;;suppressed_cell
+division;;ИТ-платформа;severity;критическая;0;0;240;0.0;available
+division;;Корпоративный бизнес;topic;оплата;36;32;227;0.15859030837004406;available
+division;;Корпоративный бизнес;topic;признание;28;27;227;0.12334801762114538;available
+division;;Корпоративный бизнес;topic;развитие;41;38;227;0.18061674008810572;available
+division;;Корпоративный бизнес;topic;руководитель;35;35;227;0.15418502202643172;available
+division;;Корпоративный бизнес;topic;нагрузка;37;31;227;0.16299559471365638;available
+division;;Корпоративный бизнес;topic;условия;;;227;;suppressed_cell
+division;;Корпоративный бизнес;topic;цели;25;23;227;0.11013215859030837;available
+division;;Корпоративный бизнес;topic;инструменты;19;17;227;0.08370044052863436;available
+division;;Корпоративный бизнес;topic;адаптация;32;30;227;0.14096916299559473;available
+division;;Корпоративный бизнес;topic;другое;36;26;227;0.15859030837004406;available
+division;;Корпоративный бизнес;topic_in_problem_comment;оплата;20;19;227;0.0881057268722467;available
+division;;Корпоративный бизнес;topic_in_problem_comment;признание;17;17;227;0.07488986784140969;available
+division;;Корпоративный бизнес;topic_in_problem_comment;развитие;20;18;227;0.0881057268722467;available
+division;;Корпоративный бизнес;topic_in_problem_comment;руководитель;16;16;227;0.07048458149779736;available
+division;;Корпоративный бизнес;topic_in_problem_comment;нагрузка;25;22;227;0.11013215859030837;available
+division;;Корпоративный бизнес;topic_in_problem_comment;условия;;;227;;suppressed_cell
+division;;Корпоративный бизнес;topic_in_problem_comment;цели;;;227;;suppressed_cell
+division;;Корпоративный бизнес;topic_in_problem_comment;инструменты;;;227;;suppressed_cell
+division;;Корпоративный бизнес;topic_in_problem_comment;адаптация;13;12;227;0.05726872246696035;available
+division;;Корпоративный бизнес;topic_in_problem_comment;другое;0;0;227;0.0;available
+division;;Корпоративный бизнес;sentiment;положительная;115;86;227;0.5066079295154186;available
+division;;Корпоративный бизнес;sentiment;отрицательная;92;74;227;0.4052863436123348;available
+division;;Корпоративный бизнес;sentiment;нейтральная;;;227;;suppressed_complement
+division;;Корпоративный бизнес;sentiment;смешанная;;;227;;suppressed_cell
+division;;Корпоративный бизнес;sentiment;неопределенная;0;0;227;0.0;available
+division;;Корпоративный бизнес;severity;отсутствует;133;96;227;0.5859030837004405;available
+division;;Корпоративный бизнес;severity;низкая;;;227;;suppressed_complement
+division;;Корпоративный бизнес;severity;средняя;81;66;227;0.3568281938325991;available
+division;;Корпоративный бизнес;severity;высокая;;;227;;suppressed_cell
+division;;Корпоративный бизнес;severity;критическая;0;0;227;0.0;available
+division;;Операционный блок;topic;оплата;42;38;208;0.20192307692307693;available
+division;;Операционный блок;topic;признание;26;24;208;0.125;available
+division;;Операционный блок;topic;развитие;45;39;208;0.21634615384615385;available
+division;;Операционный блок;topic;руководитель;41;36;208;0.1971153846153846;available
+division;;Операционный блок;topic;нагрузка;23;22;208;0.11057692307692307;available
+division;;Операционный блок;topic;условия;;;208;;suppressed_cell
+division;;Операционный блок;topic;цели;26;23;208;0.125;available
+division;;Операционный блок;topic;инструменты;13;13;208;0.0625;available
+division;;Операционный блок;topic;адаптация;29;28;208;0.13942307692307693;available
+division;;Операционный блок;topic;другое;16;16;208;0.07692307692307693;available
+division;;Операционный блок;topic_in_problem_comment;оплата;20;20;208;0.09615384615384616;available
+division;;Операционный блок;topic_in_problem_comment;признание;;;208;;suppressed_cell
+division;;Операционный блок;topic_in_problem_comment;развитие;12;12;208;0.057692307692307696;available
+division;;Операционный блок;topic_in_problem_comment;руководитель;;;208;;suppressed_cell
+division;;Операционный блок;topic_in_problem_comment;нагрузка;12;11;208;0.057692307692307696;available
+division;;Операционный блок;topic_in_problem_comment;условия;;;208;;suppressed_cell
+division;;Операционный блок;topic_in_problem_comment;цели;;;208;;suppressed_cell
+division;;Операционный блок;topic_in_problem_comment;инструменты;;;208;;suppressed_cell
+division;;Операционный блок;topic_in_problem_comment;адаптация;10;10;208;0.04807692307692308;available
+division;;Операционный блок;topic_in_problem_comment;другое;0;0;208;0.0;available
+division;;Операционный блок;sentiment;положительная;130;86;208;0.625;available
+division;;Операционный блок;sentiment;отрицательная;60;53;208;0.28846153846153844;available
+division;;Операционный блок;sentiment;нейтральная;;;208;;suppressed_complement
+division;;Операционный блок;sentiment;смешанная;;;208;;suppressed_cell
+division;;Операционный блок;sentiment;неопределенная;0;0;208;0.0;available
+division;;Операционный блок;severity;отсутствует;144;92;208;0.6923076923076923;available
+division;;Операционный блок;severity;низкая;;;208;;suppressed_cell
+division;;Операционный блок;severity;средняя;58;50;208;0.27884615384615385;available
+division;;Операционный блок;severity;высокая;;;208;;suppressed_cell
+division;;Операционный блок;severity;критическая;0;0;208;0.0;available
+division;;Розничный блок;topic;оплата;48;45;256;0.1875;available
+division;;Розничный блок;topic;признание;49;46;256;0.19140625;available
+division;;Розничный блок;topic;развитие;40;36;256;0.15625;available
+division;;Розничный блок;topic;руководитель;54;51;256;0.2109375;available
+division;;Розничный блок;topic;нагрузка;56;52;256;0.21875;available
+division;;Розничный блок;topic;условия;17;16;256;0.06640625;available
+division;;Розничный блок;topic;цели;25;24;256;0.09765625;available
+division;;Розничный блок;topic;инструменты;15;14;256;0.05859375;available
+division;;Розничный блок;topic;адаптация;25;25;256;0.09765625;available
+division;;Розничный блок;topic;другое;21;21;256;0.08203125;available
+division;;Розничный блок;topic_in_problem_comment;оплата;30;29;256;0.1171875;available
+division;;Розничный блок;topic_in_problem_comment;признание;27;27;256;0.10546875;available
+division;;Розничный блок;topic_in_problem_comment;развитие;11;11;256;0.04296875;available
+division;;Розничный блок;topic_in_problem_comment;руководитель;18;18;256;0.0703125;available
+division;;Розничный блок;topic_in_problem_comment;нагрузка;39;37;256;0.15234375;available
+division;;Розничный блок;topic_in_problem_comment;условия;;;256;;suppressed_cell
+division;;Розничный блок;topic_in_problem_comment;цели;14;14;256;0.0546875;available
+division;;Розничный блок;topic_in_problem_comment;инструменты;;;256;;suppressed_cell
+division;;Розничный блок;topic_in_problem_comment;адаптация;12;12;256;0.046875;available
+division;;Розничный блок;topic_in_problem_comment;другое;0;0;256;0.0;available
+division;;Розничный блок;sentiment;положительная;115;80;256;0.44921875;available
+division;;Розничный блок;sentiment;отрицательная;114;88;256;0.4453125;available
+division;;Розничный блок;sentiment;нейтральная;;;256;;suppressed_complement
+division;;Розничный блок;sentiment;смешанная;;;256;;suppressed_cell
+division;;Розничный блок;sentiment;неопределенная;0;0;256;0.0;available
+division;;Розничный блок;severity;отсутствует;141;97;256;0.55078125;available
+division;;Розничный блок;severity;низкая;;;256;;suppressed_cell
+division;;Розничный блок;severity;средняя;106;84;256;0.4140625;available
+division;;Розничный блок;severity;высокая;;;256;;suppressed_cell
+division;;Розничный блок;severity;критическая;0;0;256;0.0;available
+division;;Функция HR;topic;оплата;57;45;279;0.20430107526881722;available
+division;;Функция HR;topic;признание;30;29;279;0.10752688172043011;available
+division;;Функция HR;topic;развитие;45;39;279;0.16129032258064516;available
+division;;Функция HR;topic;руководитель;54;50;279;0.1935483870967742;available
+division;;Функция HR;topic;нагрузка;51;41;279;0.1827956989247312;available
+division;;Функция HR;topic;условия;17;16;279;0.06093189964157706;available
+division;;Функция HR;topic;цели;27;25;279;0.0967741935483871;available
+division;;Функция HR;topic;инструменты;20;18;279;0.07168458781362007;available
+division;;Функция HR;topic;адаптация;28;25;279;0.1003584229390681;available
+division;;Функция HR;topic;другое;28;28;279;0.1003584229390681;available
+division;;Функция HR;topic_in_problem_comment;оплата;34;30;279;0.12186379928315412;available
+division;;Функция HR;topic_in_problem_comment;признание;14;14;279;0.05017921146953405;available
+division;;Функция HR;topic_in_problem_comment;развитие;17;16;279;0.06093189964157706;available
+division;;Функция HR;topic_in_problem_comment;руководитель;20;19;279;0.07168458781362007;available
+division;;Функция HR;topic_in_problem_comment;нагрузка;26;20;279;0.0931899641577061;available
+division;;Функция HR;topic_in_problem_comment;условия;;;279;;suppressed_cell
+division;;Функция HR;topic_in_problem_comment;цели;;;279;;suppressed_cell
+division;;Функция HR;topic_in_problem_comment;инструменты;;;279;;suppressed_cell
+division;;Функция HR;topic_in_problem_comment;адаптация;12;11;279;0.043010752688172046;available
+division;;Функция HR;topic_in_problem_comment;другое;0;0;279;0.0;available
+division;;Функция HR;sentiment;положительная;147;112;279;0.5268817204301075;available
+division;;Функция HR;sentiment;отрицательная;105;81;279;0.3763440860215054;available
+division;;Функция HR;sentiment;нейтральная;;;279;;suppressed_complement
+division;;Функция HR;sentiment;смешанная;;;279;;suppressed_cell
+division;;Функция HR;sentiment;неопределенная;0;0;279;0.0;available
+division;;Функция HR;severity;отсутствует;167;123;279;0.5985663082437276;available
+division;;Функция HR;severity;низкая;;;279;;suppressed_cell
+division;;Функция HR;severity;средняя;101;80;279;0.36200716845878134;available
+division;;Функция HR;severity;высокая;;;279;;suppressed_cell
+division;;Функция HR;severity;критическая;0;0;279;0.0;available
+division_wave;2026-03;ИТ-платформа;topic;оплата;16;16;84;0.19047619047619047;available
+division_wave;2026-03;ИТ-платформа;topic;признание;14;14;84;0.16666666666666666;available
+division_wave;2026-03;ИТ-платформа;topic;развитие;11;11;84;0.13095238095238096;available
+division_wave;2026-03;ИТ-платформа;topic;руководитель;15;15;84;0.17857142857142858;available
+division_wave;2026-03;ИТ-платформа;topic;нагрузка;11;11;84;0.13095238095238096;available
+division_wave;2026-03;ИТ-платформа;topic;условия;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic;цели;14;14;84;0.16666666666666666;available
+division_wave;2026-03;ИТ-платформа;topic;инструменты;11;11;84;0.13095238095238096;available
+division_wave;2026-03;ИТ-платформа;topic;адаптация;14;14;84;0.16666666666666666;available
+division_wave;2026-03;ИТ-платформа;topic;другое;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;оплата;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;признание;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;развитие;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;руководитель;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;нагрузка;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;условия;0;0;84;0.0;available
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;цели;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;инструменты;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;адаптация;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_problem_comment;другое;0;0;84;0.0;available
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;оплата;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;признание;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;развитие;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;руководитель;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;нагрузка;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;условия;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;цели;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;инструменты;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;адаптация;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_positive_comment;другое;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;оплата;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;признание;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;развитие;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;руководитель;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;нагрузка;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;условия;;;84;;suppressed_complement
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;цели;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;инструменты;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;адаптация;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;topic_in_negative_comment;другое;;;84;;suppressed_complement
+division_wave;2026-03;ИТ-платформа;sentiment;положительная;41;41;84;0.4880952380952381;available
+division_wave;2026-03;ИТ-платформа;sentiment;отрицательная;37;37;84;0.44047619047619047;available
+division_wave;2026-03;ИТ-платформа;sentiment;нейтральная;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;sentiment;смешанная;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;sentiment;неопределенная;0;0;84;0.0;available
+division_wave;2026-03;ИТ-платформа;severity;отсутствует;46;46;84;0.5476190476190477;available
+division_wave;2026-03;ИТ-платформа;severity;низкая;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;severity;средняя;35;35;84;0.4166666666666667;available
+division_wave;2026-03;ИТ-платформа;severity;высокая;;;84;;suppressed_cell
+division_wave;2026-03;ИТ-платформа;severity;критическая;0;0;84;0.0;available
+division_wave;2026-03;Корпоративный бизнес;topic;оплата;18;18;92;0.1956521739130435;available
+division_wave;2026-03;Корпоративный бизнес;topic;признание;12;12;92;0.13043478260869565;available
+division_wave;2026-03;Корпоративный бизнес;topic;развитие;14;14;92;0.15217391304347827;available
+division_wave;2026-03;Корпоративный бизнес;topic;руководитель;15;15;92;0.16304347826086957;available
+division_wave;2026-03;Корпоративный бизнес;topic;нагрузка;13;12;92;0.14130434782608695;available
+division_wave;2026-03;Корпоративный бизнес;topic;условия;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic;цели;10;10;92;0.10869565217391304;available
+division_wave;2026-03;Корпоративный бизнес;topic;инструменты;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic;адаптация;14;14;92;0.15217391304347827;available
+division_wave;2026-03;Корпоративный бизнес;topic;другое;14;13;92;0.15217391304347827;available
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;оплата;10;10;92;0.10869565217391304;available
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;признание;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;развитие;10;10;92;0.10869565217391304;available
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;руководитель;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;нагрузка;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;условия;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;цели;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;инструменты;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;адаптация;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_problem_comment;другое;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;оплата;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;признание;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;развитие;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;руководитель;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;нагрузка;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;условия;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;цели;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;инструменты;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;адаптация;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;topic_in_positive_comment;другое;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;оплата;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;признание;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;развитие;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;руководитель;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;нагрузка;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;условия;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;цели;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;инструменты;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;адаптация;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;topic_in_negative_comment;другое;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;sentiment;положительная;46;45;92;0.5;available
+division_wave;2026-03;Корпоративный бизнес;sentiment;отрицательная;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;sentiment;нейтральная;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;sentiment;смешанная;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;sentiment;неопределенная;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;severity;отсутствует;53;52;92;0.5760869565217391;available
+division_wave;2026-03;Корпоративный бизнес;severity;низкая;;;92;;suppressed_cell
+division_wave;2026-03;Корпоративный бизнес;severity;средняя;;;92;;suppressed_complement
+division_wave;2026-03;Корпоративный бизнес;severity;высокая;0;0;92;0.0;available
+division_wave;2026-03;Корпоративный бизнес;severity;критическая;0;0;92;0.0;available
+division_wave;2026-03;Операционный блок;topic;оплата;10;10;64;0.15625;available
+division_wave;2026-03;Операционный блок;topic;признание;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic;развитие;15;15;64;0.234375;available
+division_wave;2026-03;Операционный блок;topic;руководитель;16;16;64;0.25;available
+division_wave;2026-03;Операционный блок;topic;нагрузка;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic;условия;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic;цели;11;11;64;0.171875;available
+division_wave;2026-03;Операционный блок;topic;инструменты;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic;адаптация;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic;другое;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;оплата;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;признание;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;развитие;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;руководитель;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;нагрузка;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;условия;0;0;64;0.0;available
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;цели;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;инструменты;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;адаптация;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_problem_comment;другое;0;0;64;0.0;available
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;оплата;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;признание;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;развитие;;;64;;suppressed_complement
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;руководитель;;;64;;suppressed_complement
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;нагрузка;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;условия;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;цели;;;64;;suppressed_complement
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;инструменты;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;адаптация;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_positive_comment;другое;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;оплата;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;признание;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;развитие;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;руководитель;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;нагрузка;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;условия;;;64;;suppressed_complement
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;цели;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;инструменты;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;адаптация;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;topic_in_negative_comment;другое;;;64;;suppressed_complement
+division_wave;2026-03;Операционный блок;sentiment;положительная;42;42;64;0.65625;available
+division_wave;2026-03;Операционный блок;sentiment;отрицательная;15;15;64;0.234375;available
+division_wave;2026-03;Операционный блок;sentiment;нейтральная;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;sentiment;смешанная;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;sentiment;неопределенная;0;0;64;0.0;available
+division_wave;2026-03;Операционный блок;severity;отсутствует;47;47;64;0.734375;available
+division_wave;2026-03;Операционный блок;severity;низкая;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;severity;средняя;15;15;64;0.234375;available
+division_wave;2026-03;Операционный блок;severity;высокая;;;64;;suppressed_cell
+division_wave;2026-03;Операционный блок;severity;критическая;0;0;64;0.0;available
+division_wave;2026-03;Розничный блок;topic;оплата;22;22;96;0.22916666666666666;available
+division_wave;2026-03;Розничный блок;topic;признание;20;20;96;0.20833333333333334;available
+division_wave;2026-03;Розничный блок;topic;развитие;14;14;96;0.14583333333333334;available
+division_wave;2026-03;Розничный блок;topic;руководитель;16;16;96;0.16666666666666666;available
+division_wave;2026-03;Розничный блок;topic;нагрузка;19;19;96;0.19791666666666666;available
+division_wave;2026-03;Розничный блок;topic;условия;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic;цели;10;10;96;0.10416666666666667;available
+division_wave;2026-03;Розничный блок;topic;инструменты;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic;адаптация;12;12;96;0.125;available
+division_wave;2026-03;Розничный блок;topic;другое;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;оплата;16;16;96;0.16666666666666666;available
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;признание;10;10;96;0.10416666666666667;available
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;развитие;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;руководитель;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;нагрузка;14;14;96;0.14583333333333334;available
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;условия;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;цели;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;инструменты;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;адаптация;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_problem_comment;другое;0;0;96;0.0;available
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;оплата;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;признание;10;10;96;0.10416666666666667;available
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;развитие;;;96;;suppressed_complement
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;руководитель;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;нагрузка;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;условия;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;цели;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;инструменты;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;адаптация;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_positive_comment;другое;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;оплата;;;96;;suppressed_complement
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;признание;10;10;96;0.10416666666666667;available
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;развитие;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;руководитель;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;нагрузка;;;96;;suppressed_complement
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;условия;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;цели;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;инструменты;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;адаптация;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;topic_in_negative_comment;другое;;;96;;suppressed_complement
+division_wave;2026-03;Розничный блок;sentiment;положительная;42;42;96;0.4375;available
+division_wave;2026-03;Розничный блок;sentiment;отрицательная;44;44;96;0.4583333333333333;available
+division_wave;2026-03;Розничный блок;sentiment;нейтральная;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;sentiment;смешанная;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;sentiment;неопределенная;0;0;96;0.0;available
+division_wave;2026-03;Розничный блок;severity;отсутствует;51;51;96;0.53125;available
+division_wave;2026-03;Розничный блок;severity;низкая;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;severity;средняя;40;40;96;0.4166666666666667;available
+division_wave;2026-03;Розничный блок;severity;высокая;;;96;;suppressed_cell
+division_wave;2026-03;Розничный блок;severity;критическая;0;0;96;0.0;available
+division_wave;2026-03;Функция HR;topic;оплата;24;24;94;0.2553191489361702;available
+division_wave;2026-03;Функция HR;topic;признание;13;13;94;0.13829787234042554;available
+division_wave;2026-03;Функция HR;topic;развитие;19;19;94;0.20212765957446807;available
+division_wave;2026-03;Функция HR;topic;руководитель;14;14;94;0.14893617021276595;available
+division_wave;2026-03;Функция HR;topic;нагрузка;15;15;94;0.1595744680851064;available
+division_wave;2026-03;Функция HR;topic;условия;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic;цели;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic;инструменты;11;11;94;0.11702127659574468;available
+division_wave;2026-03;Функция HR;topic;адаптация;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic;другое;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;оплата;19;19;94;0.20212765957446807;available
+division_wave;2026-03;Функция HR;topic_in_problem_comment;признание;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;развитие;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;руководитель;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;нагрузка;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;условия;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;цели;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;инструменты;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;адаптация;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_problem_comment;другое;0;0;94;0.0;available
+division_wave;2026-03;Функция HR;topic_in_positive_comment;оплата;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;признание;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;развитие;;;94;;suppressed_complement
+division_wave;2026-03;Функция HR;topic_in_positive_comment;руководитель;;;94;;suppressed_complement
+division_wave;2026-03;Функция HR;topic_in_positive_comment;нагрузка;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;условия;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;цели;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;инструменты;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;адаптация;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_positive_comment;другое;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;оплата;;;94;;suppressed_complement
+division_wave;2026-03;Функция HR;topic_in_negative_comment;признание;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;развитие;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;руководитель;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;нагрузка;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;условия;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;цели;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;инструменты;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;адаптация;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;topic_in_negative_comment;другое;;;94;;suppressed_complement
+division_wave;2026-03;Функция HR;sentiment;положительная;46;46;94;0.48936170212765956;available
+division_wave;2026-03;Функция HR;sentiment;отрицательная;39;39;94;0.4148936170212766;available
+division_wave;2026-03;Функция HR;sentiment;нейтральная;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;sentiment;смешанная;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;sentiment;неопределенная;0;0;94;0.0;available
+division_wave;2026-03;Функция HR;severity;отсутствует;52;52;94;0.5531914893617021;available
+division_wave;2026-03;Функция HR;severity;низкая;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;severity;средняя;40;40;94;0.425531914893617;available
+division_wave;2026-03;Функция HR;severity;высокая;;;94;;suppressed_cell
+division_wave;2026-03;Функция HR;severity;критическая;0;0;94;0.0;available
+division_wave;2026-06;ИТ-платформа;topic;оплата;15;15;79;0.189873417721519;available
+division_wave;2026-06;ИТ-платформа;topic;признание;12;11;79;0.1518987341772152;available
+division_wave;2026-06;ИТ-платформа;topic;развитие;16;16;79;0.20253164556962025;available
+division_wave;2026-06;ИТ-платформа;topic;руководитель;12;12;79;0.1518987341772152;available
+division_wave;2026-06;ИТ-платформа;topic;нагрузка;18;18;79;0.22784810126582278;available
+division_wave;2026-06;ИТ-платформа;topic;условия;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic;цели;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic;инструменты;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic;адаптация;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic;другое;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;оплата;12;12;79;0.1518987341772152;available
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;признание;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;развитие;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;руководитель;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;нагрузка;12;12;79;0.1518987341772152;available
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;условия;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;цели;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;инструменты;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;адаптация;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_problem_comment;другое;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;оплата;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;признание;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;развитие;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;руководитель;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;нагрузка;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;условия;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;цели;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;инструменты;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;адаптация;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_positive_comment;другое;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;оплата;;;79;;suppressed_complement
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;признание;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;развитие;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;руководитель;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;нагрузка;;;79;;suppressed_complement
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;условия;;;79;;suppressed_complement
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;цели;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;инструменты;;;79;;suppressed_complement
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;адаптация;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;topic_in_negative_comment;другое;;;79;;suppressed_complement
+division_wave;2026-06;ИТ-платформа;sentiment;положительная;36;36;79;0.45569620253164556;available
+division_wave;2026-06;ИТ-платформа;sentiment;отрицательная;35;34;79;0.4430379746835443;available
+division_wave;2026-06;ИТ-платформа;sentiment;нейтральная;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;sentiment;смешанная;;;79;;suppressed_cell
+division_wave;2026-06;ИТ-платформа;sentiment;неопределенная;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;severity;отсутствует;43;43;79;0.5443037974683544;available
+division_wave;2026-06;ИТ-платформа;severity;низкая;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;severity;средняя;36;35;79;0.45569620253164556;available
+division_wave;2026-06;ИТ-платформа;severity;высокая;0;0;79;0.0;available
+division_wave;2026-06;ИТ-платформа;severity;критическая;0;0;79;0.0;available
+division_wave;2026-06;Корпоративный бизнес;topic;оплата;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic;признание;11;11;69;0.15942028985507245;available
+division_wave;2026-06;Корпоративный бизнес;topic;развитие;15;15;69;0.21739130434782608;available
+division_wave;2026-06;Корпоративный бизнес;topic;руководитель;10;10;69;0.14492753623188406;available
+division_wave;2026-06;Корпоративный бизнес;topic;нагрузка;13;13;69;0.18840579710144928;available
+division_wave;2026-06;Корпоративный бизнес;topic;условия;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic;цели;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic;инструменты;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic;адаптация;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic;другое;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;оплата;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;признание;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;развитие;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;руководитель;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;нагрузка;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;условия;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;цели;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;инструменты;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;адаптация;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_problem_comment;другое;0;0;69;0.0;available
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;оплата;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;признание;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;развитие;;;69;;suppressed_complement
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;руководитель;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;нагрузка;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;условия;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;цели;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;инструменты;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;адаптация;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_positive_comment;другое;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;оплата;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;признание;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;развитие;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;руководитель;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;нагрузка;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;условия;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;цели;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;инструменты;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;адаптация;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;topic_in_negative_comment;другое;;;69;;suppressed_complement
+division_wave;2026-06;Корпоративный бизнес;sentiment;положительная;35;34;69;0.5072463768115942;available
+division_wave;2026-06;Корпоративный бизнес;sentiment;отрицательная;28;28;69;0.4057971014492754;available
+division_wave;2026-06;Корпоративный бизнес;sentiment;нейтральная;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;sentiment;смешанная;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;sentiment;неопределенная;0;0;69;0.0;available
+division_wave;2026-06;Корпоративный бизнес;severity;отсутствует;40;39;69;0.5797101449275363;available
+division_wave;2026-06;Корпоративный бизнес;severity;низкая;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;severity;средняя;23;23;69;0.3333333333333333;available
+division_wave;2026-06;Корпоративный бизнес;severity;высокая;;;69;;suppressed_cell
+division_wave;2026-06;Корпоративный бизнес;severity;критическая;0;0;69;0.0;available
+division_wave;2026-06;Операционный блок;topic;оплата;18;18;68;0.2647058823529412;available
+division_wave;2026-06;Операционный блок;topic;признание;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;развитие;13;13;68;0.19117647058823528;available
+division_wave;2026-06;Операционный блок;topic;руководитель;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;нагрузка;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;условия;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;цели;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;инструменты;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;адаптация;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic;другое;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;оплата;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;признание;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;развитие;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;руководитель;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;нагрузка;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;условия;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;цели;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;инструменты;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;адаптация;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;topic_in_problem_comment;другое;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;оплата;;;68;;suppressed_complement
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;признание;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;развитие;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;руководитель;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;нагрузка;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;условия;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;цели;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;инструменты;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;адаптация;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_positive_comment;другое;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;оплата;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;признание;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;развитие;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;руководитель;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;нагрузка;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;условия;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;цели;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;инструменты;;;68;;suppressed_complement
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;адаптация;;;68;;suppressed_complement
+division_wave;2026-06;Операционный блок;topic_in_negative_comment;другое;;;68;;suppressed_complement
+division_wave;2026-06;Операционный блок;sentiment;положительная;43;43;68;0.6323529411764706;available
+division_wave;2026-06;Операционный блок;sentiment;отрицательная;21;21;68;0.3088235294117647;available
+division_wave;2026-06;Операционный блок;sentiment;нейтральная;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;sentiment;смешанная;;;68;;suppressed_cell
+division_wave;2026-06;Операционный блок;sentiment;неопределенная;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;severity;отсутствует;45;45;68;0.6617647058823529;available
+division_wave;2026-06;Операционный блок;severity;низкая;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;severity;средняя;23;23;68;0.3382352941176471;available
+division_wave;2026-06;Операционный блок;severity;высокая;0;0;68;0.0;available
+division_wave;2026-06;Операционный блок;severity;критическая;0;0;68;0.0;available
+division_wave;2026-06;Розничный блок;topic;оплата;16;16;87;0.1839080459770115;available
+division_wave;2026-06;Розничный блок;topic;признание;15;15;87;0.1724137931034483;available
+division_wave;2026-06;Розничный блок;topic;развитие;15;15;87;0.1724137931034483;available
+division_wave;2026-06;Розничный блок;topic;руководитель;24;24;87;0.27586206896551724;available
+division_wave;2026-06;Розничный блок;topic;нагрузка;20;20;87;0.22988505747126436;available
+division_wave;2026-06;Розничный блок;topic;условия;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic;цели;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic;инструменты;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic;адаптация;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic;другое;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;оплата;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;признание;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;развитие;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;руководитель;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;нагрузка;13;13;87;0.14942528735632185;available
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;условия;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;цели;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;инструменты;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;адаптация;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_problem_comment;другое;0;0;87;0.0;available
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;оплата;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;признание;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;развитие;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;руководитель;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;нагрузка;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;условия;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;цели;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;инструменты;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;адаптация;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_positive_comment;другое;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;оплата;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;признание;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;развитие;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;руководитель;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;нагрузка;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;условия;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;цели;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;инструменты;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;адаптация;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;topic_in_negative_comment;другое;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;sentiment;положительная;40;38;87;0.45977011494252873;available
+division_wave;2026-06;Розничный блок;sentiment;отрицательная;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;sentiment;нейтральная;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;sentiment;смешанная;0;0;87;0.0;available
+division_wave;2026-06;Розничный блок;sentiment;неопределенная;0;0;87;0.0;available
+division_wave;2026-06;Розничный блок;severity;отсутствует;49;47;87;0.5632183908045977;available
+division_wave;2026-06;Розничный блок;severity;низкая;;;87;;suppressed_cell
+division_wave;2026-06;Розничный блок;severity;средняя;;;87;;suppressed_complement
+division_wave;2026-06;Розничный блок;severity;высокая;0;0;87;0.0;available
+division_wave;2026-06;Розничный блок;severity;критическая;0;0;87;0.0;available
+division_wave;2026-06;Функция HR;topic;оплата;17;17;99;0.1717171717171717;available
+division_wave;2026-06;Функция HR;topic;признание;10;10;99;0.10101010101010101;available
+division_wave;2026-06;Функция HR;topic;развитие;12;12;99;0.12121212121212122;available
+division_wave;2026-06;Функция HR;topic;руководитель;21;21;99;0.21212121212121213;available
+division_wave;2026-06;Функция HR;topic;нагрузка;25;24;99;0.25252525252525254;available
+division_wave;2026-06;Функция HR;topic;условия;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic;цели;10;10;99;0.10101010101010101;available
+division_wave;2026-06;Функция HR;topic;инструменты;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic;адаптация;12;12;99;0.12121212121212122;available
+division_wave;2026-06;Функция HR;topic;другое;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;оплата;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;признание;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;развитие;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;руководитель;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;нагрузка;13;12;99;0.13131313131313133;available
+division_wave;2026-06;Функция HR;topic_in_problem_comment;условия;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;цели;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;инструменты;0;0;99;0.0;available
+division_wave;2026-06;Функция HR;topic_in_problem_comment;адаптация;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_problem_comment;другое;0;0;99;0.0;available
+division_wave;2026-06;Функция HR;topic_in_positive_comment;оплата;;;99;;suppressed_complement
+division_wave;2026-06;Функция HR;topic_in_positive_comment;признание;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;развитие;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;руководитель;;;99;;suppressed_complement
+division_wave;2026-06;Функция HR;topic_in_positive_comment;нагрузка;12;12;99;0.12121212121212122;available
+division_wave;2026-06;Функция HR;topic_in_positive_comment;условия;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;цели;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;инструменты;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;адаптация;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_positive_comment;другое;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;оплата;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;признание;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;развитие;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;руководитель;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;нагрузка;13;12;99;0.13131313131313133;available
+division_wave;2026-06;Функция HR;topic_in_negative_comment;условия;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;цели;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;инструменты;;;99;;suppressed_complement
+division_wave;2026-06;Функция HR;topic_in_negative_comment;адаптация;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;topic_in_negative_comment;другое;;;99;;suppressed_complement
+division_wave;2026-06;Функция HR;sentiment;положительная;55;54;99;0.5555555555555556;available
+division_wave;2026-06;Функция HR;sentiment;отрицательная;39;38;99;0.3939393939393939;available
+division_wave;2026-06;Функция HR;sentiment;нейтральная;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;sentiment;смешанная;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;sentiment;неопределенная;0;0;99;0.0;available
+division_wave;2026-06;Функция HR;severity;отсутствует;59;58;99;0.5959595959595959;available
+division_wave;2026-06;Функция HR;severity;низкая;;;99;;suppressed_cell
+division_wave;2026-06;Функция HR;severity;средняя;;;99;;suppressed_complement
+division_wave;2026-06;Функция HR;severity;высокая;0;0;99;0.0;available
+division_wave;2026-06;Функция HR;severity;критическая;0;0;99;0.0;available
+division_wave;2026-09;ИТ-платформа;topic;оплата;14;14;77;0.18181818181818182;available
+division_wave;2026-09;ИТ-платформа;topic;признание;10;10;77;0.12987012987012986;available
+division_wave;2026-09;ИТ-платформа;topic;развитие;14;14;77;0.18181818181818182;available
+division_wave;2026-09;ИТ-платформа;topic;руководитель;10;10;77;0.12987012987012986;available
+division_wave;2026-09;ИТ-платформа;topic;нагрузка;16;16;77;0.2077922077922078;available
+division_wave;2026-09;ИТ-платформа;topic;условия;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic;цели;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic;инструменты;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic;адаптация;10;10;77;0.12987012987012986;available
+division_wave;2026-09;ИТ-платформа;topic;другое;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;оплата;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;признание;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;развитие;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;руководитель;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;нагрузка;13;13;77;0.16883116883116883;available
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;условия;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;цели;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;инструменты;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;адаптация;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_problem_comment;другое;0;0;77;0.0;available
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;оплата;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;признание;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;развитие;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;руководитель;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;нагрузка;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;условия;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;цели;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;инструменты;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;адаптация;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_positive_comment;другое;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;оплата;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;признание;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;развитие;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;руководитель;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;нагрузка;;;77;;suppressed_complement
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;условия;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;цели;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;инструменты;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;адаптация;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;topic_in_negative_comment;другое;;;77;;suppressed_complement
+division_wave;2026-09;ИТ-платформа;sentiment;положительная;31;31;77;0.4025974025974026;available
+division_wave;2026-09;ИТ-платформа;sentiment;отрицательная;40;40;77;0.5194805194805194;available
+division_wave;2026-09;ИТ-платформа;sentiment;нейтральная;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;sentiment;смешанная;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;sentiment;неопределенная;0;0;77;0.0;available
+division_wave;2026-09;ИТ-платформа;severity;отсутствует;35;35;77;0.45454545454545453;available
+division_wave;2026-09;ИТ-платформа;severity;низкая;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;severity;средняя;39;39;77;0.5064935064935064;available
+division_wave;2026-09;ИТ-платформа;severity;высокая;;;77;;suppressed_cell
+division_wave;2026-09;ИТ-платформа;severity;критическая;0;0;77;0.0;available
+division_wave;2026-09;Корпоративный бизнес;topic;оплата;11;11;66;0.16666666666666666;available
+division_wave;2026-09;Корпоративный бизнес;topic;признание;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic;развитие;12;12;66;0.18181818181818182;available
+division_wave;2026-09;Корпоративный бизнес;topic;руководитель;10;10;66;0.15151515151515152;available
+division_wave;2026-09;Корпоративный бизнес;topic;нагрузка;11;11;66;0.16666666666666666;available
+division_wave;2026-09;Корпоративный бизнес;topic;условия;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic;цели;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic;инструменты;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic;адаптация;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic;другое;14;14;66;0.21212121212121213;available
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;оплата;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;признание;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;развитие;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;руководитель;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;нагрузка;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;условия;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;цели;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;инструменты;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;адаптация;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_problem_comment;другое;0;0;66;0.0;available
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;оплата;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;признание;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;развитие;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;руководитель;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;нагрузка;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;условия;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;цели;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;инструменты;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;адаптация;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_positive_comment;другое;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;оплата;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;признание;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;развитие;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;руководитель;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;нагрузка;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;условия;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;цели;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;инструменты;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;адаптация;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;topic_in_negative_comment;другое;0;0;66;0.0;available
+division_wave;2026-09;Корпоративный бизнес;sentiment;положительная;34;34;66;0.5151515151515151;available
+division_wave;2026-09;Корпоративный бизнес;sentiment;отрицательная;25;25;66;0.3787878787878788;available
+division_wave;2026-09;Корпоративный бизнес;sentiment;нейтральная;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;sentiment;смешанная;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;sentiment;неопределенная;0;0;66;0.0;available
+division_wave;2026-09;Корпоративный бизнес;severity;отсутствует;40;40;66;0.6060606060606061;available
+division_wave;2026-09;Корпоративный бизнес;severity;низкая;;;66;;suppressed_cell
+division_wave;2026-09;Корпоративный бизнес;severity;средняя;;;66;;suppressed_complement
+division_wave;2026-09;Корпоративный бизнес;severity;высокая;0;0;66;0.0;available
+division_wave;2026-09;Корпоративный бизнес;severity;критическая;0;0;66;0.0;available
+division_wave;2026-09;Операционный блок;topic;оплата;14;14;76;0.18421052631578946;available
+division_wave;2026-09;Операционный блок;topic;признание;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic;развитие;17;17;76;0.2236842105263158;available
+division_wave;2026-09;Операционный блок;topic;руководитель;16;16;76;0.21052631578947367;available
+division_wave;2026-09;Операционный блок;topic;нагрузка;11;11;76;0.14473684210526316;available
+division_wave;2026-09;Операционный блок;topic;условия;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic;цели;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic;инструменты;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic;адаптация;13;13;76;0.17105263157894737;available
+division_wave;2026-09;Операционный блок;topic;другое;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;оплата;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;признание;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;развитие;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;руководитель;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;нагрузка;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;условия;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;цели;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;инструменты;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;адаптация;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_problem_comment;другое;0;0;76;0.0;available
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;оплата;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;признание;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;развитие;;;76;;suppressed_complement
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;руководитель;;;76;;suppressed_complement
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;нагрузка;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;условия;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;цели;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;инструменты;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;адаптация;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_positive_comment;другое;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;оплата;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;признание;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;развитие;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;руководитель;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;нагрузка;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;условия;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;цели;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;инструменты;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;адаптация;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;topic_in_negative_comment;другое;;;76;;suppressed_complement
+division_wave;2026-09;Операционный блок;sentiment;положительная;45;45;76;0.5921052631578947;available
+division_wave;2026-09;Операционный блок;sentiment;отрицательная;;;76;;suppressed_complement
+division_wave;2026-09;Операционный блок;sentiment;нейтральная;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;sentiment;смешанная;0;0;76;0.0;available
+division_wave;2026-09;Операционный блок;sentiment;неопределенная;0;0;76;0.0;available
+division_wave;2026-09;Операционный блок;severity;отсутствует;52;51;76;0.6842105263157895;available
+division_wave;2026-09;Операционный блок;severity;низкая;;;76;;suppressed_cell
+division_wave;2026-09;Операционный блок;severity;средняя;;;76;;suppressed_complement
+division_wave;2026-09;Операционный блок;severity;высокая;0;0;76;0.0;available
+division_wave;2026-09;Операционный блок;severity;критическая;0;0;76;0.0;available
+division_wave;2026-09;Розничный блок;topic;оплата;10;10;73;0.136986301369863;available
+division_wave;2026-09;Розничный блок;topic;признание;14;14;73;0.1917808219178082;available
+division_wave;2026-09;Розничный блок;topic;развитие;11;11;73;0.1506849315068493;available
+division_wave;2026-09;Розничный блок;topic;руководитель;14;14;73;0.1917808219178082;available
+division_wave;2026-09;Розничный блок;topic;нагрузка;17;17;73;0.2328767123287671;available
+division_wave;2026-09;Розничный блок;topic;условия;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic;цели;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic;инструменты;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic;адаптация;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic;другое;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;оплата;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;признание;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;развитие;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;руководитель;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;нагрузка;12;12;73;0.1643835616438356;available
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;условия;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;цели;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;инструменты;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;адаптация;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_problem_comment;другое;0;0;73;0.0;available
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;оплата;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;признание;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;развитие;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;руководитель;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;нагрузка;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;условия;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;цели;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;инструменты;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;адаптация;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_positive_comment;другое;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;оплата;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;признание;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;развитие;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;руководитель;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;нагрузка;;;73;;suppressed_complement
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;условия;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;цели;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;инструменты;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;адаптация;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;topic_in_negative_comment;другое;;;73;;suppressed_complement
+division_wave;2026-09;Розничный блок;sentiment;положительная;33;33;73;0.4520547945205479;available
+division_wave;2026-09;Розничный блок;sentiment;отрицательная;;;73;;suppressed_complement
+division_wave;2026-09;Розничный блок;sentiment;нейтральная;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;sentiment;смешанная;0;0;73;0.0;available
+division_wave;2026-09;Розничный блок;sentiment;неопределенная;0;0;73;0.0;available
+division_wave;2026-09;Розничный блок;severity;отсутствует;41;41;73;0.5616438356164384;available
+division_wave;2026-09;Розничный блок;severity;низкая;;;73;;suppressed_cell
+division_wave;2026-09;Розничный блок;severity;средняя;;;73;;suppressed_complement
+division_wave;2026-09;Розничный блок;severity;высокая;0;0;73;0.0;available
+division_wave;2026-09;Розничный блок;severity;критическая;0;0;73;0.0;available
+division_wave;2026-09;Функция HR;topic;оплата;16;16;86;0.18604651162790697;available
+division_wave;2026-09;Функция HR;topic;признание;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic;развитие;14;14;86;0.16279069767441862;available
+division_wave;2026-09;Функция HR;topic;руководитель;19;19;86;0.22093023255813954;available
+division_wave;2026-09;Функция HR;topic;нагрузка;11;11;86;0.12790697674418605;available
+division_wave;2026-09;Функция HR;topic;условия;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic;цели;10;10;86;0.11627906976744186;available
+division_wave;2026-09;Функция HR;topic;инструменты;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic;адаптация;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic;другое;14;14;86;0.16279069767441862;available
+division_wave;2026-09;Функция HR;topic_in_problem_comment;оплата;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;признание;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;развитие;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;руководитель;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;нагрузка;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;условия;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;цели;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;инструменты;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;адаптация;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_problem_comment;другое;0;0;86;0.0;available
+division_wave;2026-09;Функция HR;topic_in_positive_comment;оплата;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;признание;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;развитие;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;руководитель;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;нагрузка;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;условия;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;цели;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;инструменты;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;адаптация;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_positive_comment;другое;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;оплата;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;признание;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;развитие;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;руководитель;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;нагрузка;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;условия;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;цели;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;инструменты;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;адаптация;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;topic_in_negative_comment;другое;0;0;86;0.0;available
+division_wave;2026-09;Функция HR;sentiment;положительная;46;46;86;0.5348837209302325;available
+division_wave;2026-09;Функция HR;sentiment;отрицательная;27;27;86;0.313953488372093;available
+division_wave;2026-09;Функция HR;sentiment;нейтральная;;;86;;suppressed_complement
+division_wave;2026-09;Функция HR;sentiment;смешанная;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;sentiment;неопределенная;0;0;86;0.0;available
+division_wave;2026-09;Функция HR;severity;отсутствует;56;55;86;0.6511627906976745;available
+division_wave;2026-09;Функция HR;severity;низкая;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;severity;средняя;23;23;86;0.26744186046511625;available
+division_wave;2026-09;Функция HR;severity;высокая;;;86;;suppressed_cell
+division_wave;2026-09;Функция HR;severity;критическая;0;0;86;0.0;available
+wave;2026-03;;topic;оплата;90;90;431;0.2088167053364269;available
+wave;2026-03;;topic;признание;68;68;431;0.15777262180974477;available
+wave;2026-03;;topic;развитие;73;73;431;0.16937354988399073;available
+wave;2026-03;;topic;руководитель;76;76;431;0.17633410672853828;available
+wave;2026-03;;topic;нагрузка;63;62;431;0.14617169373549885;available
+wave;2026-03;;topic;условия;18;18;431;0.04176334106728538;available
+wave;2026-03;;topic;цели;53;52;431;0.12296983758700696;available
+wave;2026-03;;topic;инструменты;39;39;431;0.09048723897911833;available
+wave;2026-03;;topic;адаптация;57;57;431;0.13225058004640372;available
+wave;2026-03;;topic;другое;39;38;431;0.09048723897911833;available
+wave;2026-03;;topic_in_problem_comment;оплата;58;58;431;0.1345707656612529;available
+wave;2026-03;;topic_in_problem_comment;признание;37;37;431;0.08584686774941995;available
+wave;2026-03;;topic_in_problem_comment;развитие;26;26;431;0.060324825986078884;available
+wave;2026-03;;topic_in_problem_comment;руководитель;23;23;431;0.05336426914153132;available
+wave;2026-03;;topic_in_problem_comment;нагрузка;38;37;431;0.08816705336426914;available
+wave;2026-03;;topic_in_problem_comment;условия;;;431;;suppressed_cell
+wave;2026-03;;topic_in_problem_comment;цели;17;16;431;0.03944315545243619;available
+wave;2026-03;;topic_in_problem_comment;инструменты;19;19;431;0.04408352668213457;available
+wave;2026-03;;topic_in_problem_comment;адаптация;27;27;431;0.06264501160092807;available
+wave;2026-03;;topic_in_problem_comment;другое;0;0;431;0.0;available
+wave;2026-03;;topic_in_positive_comment;оплата;32;32;431;0.07424593967517401;available
+wave;2026-03;;topic_in_positive_comment;признание;31;31;431;0.07192575406032482;available
+wave;2026-03;;topic_in_positive_comment;развитие;47;47;431;0.10904872389791183;available
+wave;2026-03;;topic_in_positive_comment;руководитель;;;431;;suppressed_complement
+wave;2026-03;;topic_in_positive_comment;нагрузка;25;25;431;0.058004640371229696;available
+wave;2026-03;;topic_in_positive_comment;условия;;;431;;suppressed_complement
+wave;2026-03;;topic_in_positive_comment;цели;36;36;431;0.08352668213457076;available
+wave;2026-03;;topic_in_positive_comment;инструменты;20;20;431;0.04640371229698376;available
+wave;2026-03;;topic_in_positive_comment;адаптация;30;30;431;0.06960556844547564;available
+wave;2026-03;;topic_in_positive_comment;другое;16;15;431;0.037122969837587005;available
+wave;2026-03;;topic_in_negative_comment;оплата;;;431;;suppressed_complement
+wave;2026-03;;topic_in_negative_comment;признание;37;37;431;0.08584686774941995;available
+wave;2026-03;;topic_in_negative_comment;развитие;26;26;431;0.060324825986078884;available
+wave;2026-03;;topic_in_negative_comment;руководитель;23;23;431;0.05336426914153132;available
+wave;2026-03;;topic_in_negative_comment;нагрузка;38;37;431;0.08816705336426914;available
+wave;2026-03;;topic_in_negative_comment;условия;;;431;;suppressed_cell
+wave;2026-03;;topic_in_negative_comment;цели;17;16;431;0.03944315545243619;available
+wave;2026-03;;topic_in_negative_comment;инструменты;19;19;431;0.04408352668213457;available
+wave;2026-03;;topic_in_negative_comment;адаптация;27;27;431;0.06264501160092807;available
+wave;2026-03;;topic_in_negative_comment;другое;0;0;431;0.0;available
+wave;2026-03;;sentiment;положительная;217;216;431;0.5034802784222738;available
+wave;2026-03;;sentiment;отрицательная;175;173;431;0.4060324825986079;available
+wave;2026-03;;sentiment;нейтральная;;;431;;suppressed_complement
+wave;2026-03;;sentiment;смешанная;;;431;;suppressed_cell
+wave;2026-03;;sentiment;неопределенная;0;0;431;0.0;available
+wave;2026-03;;severity;отсутствует;249;248;431;0.5777262180974478;available
+wave;2026-03;;severity;низкая;;;431;;suppressed_complement
+wave;2026-03;;severity;средняя;165;163;431;0.382830626450116;available
+wave;2026-03;;severity;высокая;;;431;;suppressed_cell
+wave;2026-03;;severity;критическая;0;0;431;0.0;available
+wave;2026-06;;topic;оплата;73;73;406;0.17980295566502463;available
+wave;2026-06;;topic;признание;58;57;406;0.14285714285714285;available
+wave;2026-06;;topic;развитие;72;71;406;0.17733990147783252;available
+wave;2026-06;;topic;руководитель;78;76;406;0.1921182266009852;available
+wave;2026-06;;topic;нагрузка;83;82;406;0.2044334975369458;available
+wave;2026-06;;topic;условия;18;18;406;0.04433497536945813;available
+wave;2026-06;;topic;цели;41;40;406;0.10098522167487685;available
+wave;2026-06;;topic;инструменты;22;22;406;0.054187192118226604;available
+wave;2026-06;;topic;адаптация;44;44;406;0.10837438423645321;available
+wave;2026-06;;topic;другое;31;30;406;0.07635467980295567;available
+wave;2026-06;;topic_in_problem_comment;оплата;39;39;406;0.0960591133004926;available
+wave;2026-06;;topic_in_problem_comment;признание;29;28;406;0.07142857142857142;available
+wave;2026-06;;topic_in_problem_comment;развитие;29;29;406;0.07142857142857142;available
+wave;2026-06;;topic_in_problem_comment;руководитель;25;25;406;0.06157635467980296;available
+wave;2026-06;;topic_in_problem_comment;нагрузка;51;50;406;0.12561576354679804;available
+wave;2026-06;;topic_in_problem_comment;условия;;;406;;suppressed_cell
+wave;2026-06;;topic_in_problem_comment;цели;18;18;406;0.04433497536945813;available
+wave;2026-06;;topic_in_problem_comment;инструменты;;;406;;suppressed_cell
+wave;2026-06;;topic_in_problem_comment;адаптация;13;13;406;0.03201970443349754;available
+wave;2026-06;;topic_in_problem_comment;другое;0;0;406;0.0;available
+wave;2026-06;;topic_in_positive_comment;оплата;34;34;406;0.08374384236453201;available
+wave;2026-06;;topic_in_positive_comment;признание;29;29;406;0.07142857142857142;available
+wave;2026-06;;topic_in_positive_comment;развитие;43;42;406;0.10591133004926108;available
+wave;2026-06;;topic_in_positive_comment;руководитель;41;40;406;0.10098522167487685;available
+wave;2026-06;;topic_in_positive_comment;нагрузка;32;32;406;0.07881773399014778;available
+wave;2026-06;;topic_in_positive_comment;условия;;;406;;suppressed_complement
+wave;2026-06;;topic_in_positive_comment;цели;23;22;406;0.05665024630541872;available
+wave;2026-06;;topic_in_positive_comment;инструменты;;;406;;suppressed_complement
+wave;2026-06;;topic_in_positive_comment;адаптация;31;31;406;0.07635467980295567;available
+wave;2026-06;;topic_in_positive_comment;другое;14;14;406;0.034482758620689655;available
+wave;2026-06;;topic_in_negative_comment;оплата;;;406;;suppressed_complement
+wave;2026-06;;topic_in_negative_comment;признание;29;28;406;0.07142857142857142;available
+wave;2026-06;;topic_in_negative_comment;развитие;29;29;406;0.07142857142857142;available
+wave;2026-06;;topic_in_negative_comment;руководитель;25;25;406;0.06157635467980296;available
+wave;2026-06;;topic_in_negative_comment;нагрузка;51;50;406;0.12561576354679804;available
+wave;2026-06;;topic_in_negative_comment;условия;;;406;;suppressed_cell
+wave;2026-06;;topic_in_negative_comment;цели;18;18;406;0.04433497536945813;available
+wave;2026-06;;topic_in_negative_comment;инструменты;;;406;;suppressed_cell
+wave;2026-06;;topic_in_negative_comment;адаптация;13;13;406;0.03201970443349754;available
+wave;2026-06;;topic_in_negative_comment;другое;0;0;406;0.0;available
+wave;2026-06;;sentiment;положительная;210;205;406;0.5172413793103449;available
+wave;2026-06;;sentiment;отрицательная;162;160;406;0.39901477832512317;available
+wave;2026-06;;sentiment;нейтральная;;;406;;suppressed_complement
+wave;2026-06;;sentiment;смешанная;;;406;;suppressed_cell
+wave;2026-06;;sentiment;неопределенная;0;0;406;0.0;available
+wave;2026-06;;severity;отсутствует;239;232;406;0.5886699507389163;available
+wave;2026-06;;severity;низкая;;;406;;suppressed_cell
+wave;2026-06;;severity;средняя;157;155;406;0.3866995073891626;available
+wave;2026-06;;severity;высокая;;;406;;suppressed_cell
+wave;2026-06;;severity;критическая;0;0;406;0.0;available
+wave;2026-09;;topic;оплата;65;65;379;0.17150395778364116;available
+wave;2026-09;;topic;признание;44;44;379;0.11609498680738786;available
+wave;2026-09;;topic;развитие;68;68;379;0.17941952506596306;available
+wave;2026-09;;topic;руководитель;69;69;379;0.1820580474934037;available
+wave;2026-09;;topic;нагрузка;66;66;379;0.1741424802110818;available
+wave;2026-09;;topic;условия;25;25;379;0.06596306068601583;available
+wave;2026-09;;topic;цели;40;40;379;0.10554089709762533;available
+wave;2026-09;;topic;инструменты;30;29;379;0.079155672823219;available
+wave;2026-09;;topic;адаптация;46;45;379;0.12137203166226913;available
+wave;2026-09;;topic;другое;52;51;379;0.13720316622691292;available
+wave;2026-09;;topic_in_problem_comment;оплата;36;36;379;0.09498680738786279;available
+wave;2026-09;;topic_in_problem_comment;признание;26;26;379;0.06860158311345646;available
+wave;2026-09;;topic_in_problem_comment;развитие;25;25;379;0.06596306068601583;available
+wave;2026-09;;topic_in_problem_comment;руководитель;26;26;379;0.06860158311345646;available
+wave;2026-09;;topic_in_problem_comment;нагрузка;43;43;379;0.11345646437994723;available
+wave;2026-09;;topic_in_problem_comment;условия;12;12;379;0.0316622691292876;available
+wave;2026-09;;topic_in_problem_comment;цели;15;15;379;0.0395778364116095;available
+wave;2026-09;;topic_in_problem_comment;инструменты;17;17;379;0.044854881266490766;available
+wave;2026-09;;topic_in_problem_comment;адаптация;23;23;379;0.06068601583113457;available
+wave;2026-09;;topic_in_problem_comment;другое;0;0;379;0.0;available
+wave;2026-09;;topic_in_positive_comment;оплата;29;29;379;0.07651715039577836;available
+wave;2026-09;;topic_in_positive_comment;признание;18;18;379;0.047493403693931395;available
+wave;2026-09;;topic_in_positive_comment;развитие;43;43;379;0.11345646437994723;available
+wave;2026-09;;topic_in_positive_comment;руководитель;;;379;;suppressed_complement
+wave;2026-09;;topic_in_positive_comment;нагрузка;23;23;379;0.06068601583113457;available
+wave;2026-09;;topic_in_positive_comment;условия;13;13;379;0.03430079155672823;available
+wave;2026-09;;topic_in_positive_comment;цели;25;25;379;0.06596306068601583;available
+wave;2026-09;;topic_in_positive_comment;инструменты;13;13;379;0.03430079155672823;available
+wave;2026-09;;topic_in_positive_comment;адаптация;23;23;379;0.06068601583113457;available
+wave;2026-09;;topic_in_positive_comment;другое;23;22;379;0.06068601583113457;available
+wave;2026-09;;topic_in_negative_comment;оплата;;;379;;suppressed_complement
+wave;2026-09;;topic_in_negative_comment;признание;26;26;379;0.06860158311345646;available
+wave;2026-09;;topic_in_negative_comment;развитие;25;25;379;0.06596306068601583;available
+wave;2026-09;;topic_in_negative_comment;руководитель;26;26;379;0.06860158311345646;available
+wave;2026-09;;topic_in_negative_comment;нагрузка;43;43;379;0.11345646437994723;available
+wave;2026-09;;topic_in_negative_comment;условия;12;12;379;0.0316622691292876;available
+wave;2026-09;;topic_in_negative_comment;цели;15;15;379;0.0395778364116095;available
+wave;2026-09;;topic_in_negative_comment;инструменты;17;17;379;0.044854881266490766;available
+wave;2026-09;;topic_in_negative_comment;адаптация;23;23;379;0.06068601583113457;available
+wave;2026-09;;topic_in_negative_comment;другое;0;0;379;0.0;available
+wave;2026-09;;sentiment;положительная;190;189;379;0.5013192612137203;available
+wave;2026-09;;sentiment;отрицательная;148;148;379;0.39050131926121373;available
+wave;2026-09;;sentiment;нейтральная;;;379;;suppressed_complement
+wave;2026-09;;sentiment;смешанная;;;379;;suppressed_cell
+wave;2026-09;;sentiment;неопределенная;0;0;379;0.0;available
+wave;2026-09;;severity;отсутствует;225;222;379;0.5936675461741425;available
+wave;2026-09;;severity;низкая;;;379;;suppressed_complement
+wave;2026-09;;severity;средняя;136;136;379;0.35883905013192613;available
+wave;2026-09;;severity;высокая;;;379;;suppressed_cell
+wave;2026-09;;severity;критическая;0;0;379;0.0;available

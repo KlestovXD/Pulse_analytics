@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pulse comment label v1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "topics", "sentiment", "severity", "quit_intent", "objects", "actionability",
+    "urgency", "ambiguity", "confidence", "evidence", "quit_evidence", "needs_review"
+  ],
+  "properties": {
+    "topics": {
+      "type": "array", "minItems": 1, "maxItems": 10, "uniqueItems": true,
+      "items": {"type": "string", "enum": ["оплата", "признание", "развитие", "руководитель", "нагрузка", "условия", "цели", "инструменты", "адаптация", "другое"]}
+    },
+    "sentiment": {"type": "string", "enum": ["положительная", "отрицательная", "нейтральная", "смешанная", "неопределенная"]},
+    "severity": {"type": "string", "enum": ["отсутствует", "низкая", "средняя", "высокая", "критическая"]},
+    "quit_intent": {"type": "string", "enum": ["прямое упоминание", "косвенное предположение", "свидетельств нет"]},
+    "objects": {
+      "type": "array", "minItems": 1, "maxItems": 9, "uniqueItems": true,
+      "items": {"type": "string", "enum": ["руководитель", "команда", "оплата", "кадровый процесс", "информационная система", "организация в целом", "рабочий процесс", "рабочая среда", "другой объект", "не указан"]}
+    },
+    "actionability": {"type": "string", "enum": ["есть конкретная проблема для проверки", "требуется уточнение", "конкретного действия нет"]},
+    "urgency": {"type": "string", "enum": ["обычная", "повышенная", "срочная", "не применимо"]},
+    "ambiguity": {
+      "type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true,
+      "items": {"type": "string", "enum": ["сарказм", "несколько тем", "недостаток контекста", "противоречивая оценка", "отсутствует"]}
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence": {"type": "string", "minLength": 1, "maxLength": 180},
+    "quit_evidence": {"type": "string", "maxLength": 180},
+    "needs_review": {"type": "boolean"}
+  }
+}

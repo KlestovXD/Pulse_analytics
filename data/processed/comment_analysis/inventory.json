@@ -1,0 +1,22 @@
+{
+  "input_sha256": {
+    "raw_comments": "5c6c5ce0b1418c5310489aaf8a5187a0c22cc582f29ee157f537cce711c072b6",
+    "processed_comments": "bc8683a757974490eabed96c2783901d1d8949fc4136a5c147bf6ce4df5a857e",
+    "raw_employees": "ae9daf229295f850a05bfede40e2327c3f9321f99e3afcbc26c027965a54bcde"
+  },
+  "comments": 1242,
+  "unique_texts": 62,
+  "unique_by_content_status": {
+    "placeholder": 1,
+    "substantive": 61
+  },
+  "rows_by_content_status": {
+    "placeholder": 26,
+    "substantive": 1216
+  },
+  "rows_by_author_status": {
+    "confirmed": 1237,
+    "unknown_author": 5
+  },
+  "review_sample": 30
+}

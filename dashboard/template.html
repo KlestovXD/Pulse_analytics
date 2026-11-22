@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Пульс и риск текучести</title>
+  <style>/*STYLE*/</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>Пульс и риск текучести</div>
+      <nav class="navigation" aria-label="Разделы панели">
+        <button type="button" data-view="overview" aria-pressed="true">Обзор</button>
+        <button type="button" data-view="divisions" aria-pressed="false">Подразделения</button>
+        <button type="button" data-view="comments" aria-pressed="false">Комментарии</button>
+      </nav>
+      <button id="open-method" class="method-button" type="button">Методика</button>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="heading">
+      <div>
+        <p class="context">HR-аналитика · Синтетические данные</p>
+        <h1 id="view-title">Пульс сотрудников</h1>
+      </div>
+      <div class="filters" aria-label="Фильтры">
+        <label for="wave"><span>Волна</span><select id="wave"></select></label>
+        <label for="division" id="division-filter" hidden><span>Дивизион</span><select id="division"></select></label>
+      </div>
+    </div>
+    <section class="kpis" aria-label="Ключевые показатели" aria-live="polite">
+      <article class="kpi">
+        <div class="kpi-label">Участие в опросе</div>
+        <div id="participation-value" class="kpi-value"></div>
+        <div id="participation-detail" class="kpi-detail"></div>
+        <div id="participation-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Вовлечённость</div>
+        <div id="engagement-value" class="kpi-value"></div>
+        <div id="engagement-detail" class="kpi-detail"></div>
+        <div id="engagement-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Готовность рекомендовать <span>· eNPS</span></div>
+        <div id="recommend_signal-value" class="kpi-value"></div>
+        <div id="recommend_signal-detail" class="kpi-detail"></div>
+        <div id="recommend_signal-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi annual">
+        <div class="kpi-label">Годовая текучесть</div>
+        <div id="annual-value" class="kpi-value"></div>
+        <div id="annual-voluntary" class="kpi-detail"></div>
+        <div id="annual-period" class="kpi-period"></div>
+      </article>
+    </section>
+
+    <div id="overview" class="overview-grid view">
+      <section class="panel trend-panel">
+        <div class="panel-heading">
+          <div><h2>Что изменилось</h2><p id="trend-scope"></p></div>
+          <div class="mini-tabs" aria-label="Показатель графика">
+            <button type="button" data-metric="engagement" aria-pressed="true">Вовлечённость</button>
+            <button type="button" data-metric="participation" aria-pressed="false">Участие</button>
+            <button type="button" data-metric="recommend_signal" aria-pressed="false">eNPS</button>
+          </div>
+        </div>
+        <div id="trend" class="chart"></div>
+        <p id="panel-note" class="caption"></p>
+      </section>
+      <section class="panel attention-panel">
+        <div class="panel-heading"><h2>Где требуется внимание</h2><button type="button" class="text-button" id="open-divisions">Подробнее <span aria-hidden="true">→</span></button></div>
+        <div class="attention-row">
+          <h3>Текучесть дивизиона</h3>
+          <div id="retail-focus"></div>
+        </div>
+        <div class="attention-row">
+          <h3>Обе оценки ниже уровня блока</h3>
+          <div id="adverse-teams" class="compact-list"></div>
+        </div>
+        <div class="attention-row">
+          <h3>Парное снижение вовлечённости</h3>
+          <div id="signals" class="compact-list"></div>
+          <div id="previous-signal" class="compact-list"></div>
+        </div>
+      </section>
+      <section class="panel comment-preview">
+        <div class="panel-heading">
+          <div><h2>Что говорят сотрудники</h2><p id="preview-comment-base"></p></div>
+          <button type="button" class="text-button" id="open-comments">Подробнее <span aria-hidden="true">→</span></button>
+        </div>
+        <div id="preview-tones"></div>
+        <div id="preview-topics" class="topics-grid"></div>
+      </section>
+      <section class="panel market-panel">
+        <div class="panel-heading"><div><h2>Текучесть и рынок</h2><p id="market-period"></p></div></div>
+        <table aria-label="Сопоставление годовой текучести">
+          <thead><tr><th scope="col">Организация</th><th scope="col">Общая</th><th scope="col">Добровольная</th></tr></thead>
+          <tbody id="market-rows"></tbody>
+        </table>
+        <p class="caption market-caption">Ограниченная сопоставимость периодов и методик. Репрезентативного среднерыночного ориентира нет.</p>
+      </section>
+    </div>
+
+    <section id="divisions" class="panel view" hidden>
+      <div class="panel-heading"><div><h2>Сравнение дивизионов</h2><p id="division-comparison-period"></p></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Дивизион</th><th scope="col">Вовлечённость, баллы</th><th scope="col">Участие, %</th><th scope="col">eNPS, пункты</th><th scope="col">Текучесть за год, %</th></tr></thead>
+          <tbody id="division-rows"></tbody>
+        </table>
+      </div>
+      <p class="caption">Выберите дивизион, чтобы сузить список команд. Период текучести фиксирован.</p>
+      <div class="division-detail">
+        <div class="team-detail">
+          <label for="team">Показатели команды</label>
+          <select id="team"></select>
+          <div id="team-metrics" aria-live="polite"></div>
+        </div>
+        <div class="statistical-detail">
+          <h3>Проверка парных изменений</h3>
+          <div id="detail-signals"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="comments" class="comments-grid view" hidden>
+      <section class="panel">
+        <div class="panel-heading"><div><h2>Темы и тональность</h2><p id="comments-scope"></p></div></div>
+        <div id="tones"></div>
+        <div id="topics" class="topics-grid"></div>
+        <p class="caption">Тональность относится ко всему комментарию. Доли описывают содержательные записи. В одной записи может быть несколько тем. Часть тем скрыта для защиты малых групп.</p>
+      </section>
+      <section class="panel">
+        <div class="panel-heading"><div><h2>Темы и баллы опроса</h2><p id="topic-score-scope"></p></div></div>
+        <div id="score-links" class="score-links"></div>
+        <div class="evidence-note"><strong>Проверка модели</strong><p>Метки Gemini проверены на знакомых синтетических шаблонах. Серьёзность требует ручной проверки и не влияет на список команд.</p></div>
+      </section>
+    </div>
+    <footer class="footer">Источники · Сведённые ответы, реестр увольнений и агрегаты комментариев</footer>
+  </main>
+  <dialog id="method" aria-labelledby="method-title">
+    <div class="dialog-heading"><h2 id="method-title">Как читать панель</h2><button type="button" id="close-method">Закрыть</button></div>
+    <ul>
+      <li><strong>Участие</strong> — доля уникальных активных сотрудников с ответом к дате волны. День увольнения считается первым неактивным днём.</li>
+      <li><strong>Вовлечённость</strong> — среднее четырёх вопросов о признании, развитии, руководителе и целях, переведённое в шкалу 0–100. eNPS — разница долей сторонников и критиков в пунктах.</li>
+      <li><strong>Текучесть</strong> — все или только добровольные увольнения за год, делённые на среднюю ежедневную численность. Годовое окно фиксировано. Банковские раскрытия относятся к календарному 2025 году. В методике ДОМ.РФ указаны ставки уволенных работников и среднесписочная численность. <a href="https://domrfbank.ru/upload/reports/2025/appendices/appendix-14/" target="_blank" rel="noopener noreferrer">Методика Банка ДОМ.РФ</a></li>
+      <li><strong>Срез команд</strong> — вовлечённость и eNPS ниже соответствующих значений по всему блоку на той же волне. В обзоре показаны до трёх таких команд с самой низкой вовлечённостью среди доступных к публикации. Это описательный отбор по уровню.</li>
+      <li><strong>Парное изменение команды</strong> — верхняя граница исходного 95%-ного интервала ниже нуля при ≥10 валидных парах. Выделение после поправки означает q ≤ 0,05 по Бенджамини — Хохбергу среди всех проверяемых команд данного перехода.</li>
+      <li id="method-panel-note"></li>
+      <li id="method-model"></li>
+      <li><strong>Комментарии</strong> — доли среди содержательных записей. В теме положительных или отрицательных учитываются записи именно этой тональности. Смешанные отдельно учитываются в распределении тональности и в сопоставлении с баллами опроса. Контрольная выборка знакомых шаблонов подготовлена с ИИ и проверена человеком.</li>
+      <li><strong>Конфиденциальность</strong> — командные данные для малых выборок и связанные с ними дополняющие срезы скрыты на всех волнах. Малые категории комментариев и дополняющие срезы могут быть скрыты дополнительно.</li>
+    </ul>
+  </dialog>
+  <script id="snapshot" type="application/json">/*DATA*/</script>
+  <script>/*SCRIPT*/</script>
+</body>
+</html>

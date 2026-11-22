@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Пульс и риск текучести</title>
+  <style>:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #172921;
+  background: #f3f6f3;
+  --muted: #4e635a;
+  --line: #dbe6df;
+  --green: #10604e;
+  --soft: #e8f3ed;
+  --amber: #784a1d;
+  --rose: #91463e;
+  --white: #fff;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+button, select { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid #2b8d78; outline-offset: 3px; }
+.shell { max-width: 1360px; margin: 0 auto; padding: 0 26px; }
+.masthead { background: #142f27; color: white; }
+.masthead-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 54px; }
+.brand { display: flex; align-items: center; gap: 11px; font-weight: 650; font-size: 16px; white-space: nowrap; }
+.brand-icon { width: 30px; height: 30px; border: 1px solid #60998a; border-radius: 9px; display: flex; align-items: center; justify-content: center; gap: 3px; }
+.brand-icon i { background: #a4dfb4; width: 3px; height: 10px; border-radius: 2px; }
+.brand-icon i:first-child { height: 6px; }
+.brand-icon i:last-child { height: 14px; }
+.navigation { display: flex; gap: 4px; align-items: center; }
+.navigation button, .method-button { border: 1px solid transparent; color: #e0ede5; padding: 8px 12px; border-radius: 7px; background: transparent; font-size: 14px; }
+.navigation button:hover, .method-button:hover { background: #25473e; }
+.navigation button[aria-pressed="true"] { background: #31564b; color: white; font-weight: 650; }
+.method-button { border-color: #518074; }
+main.shell { padding-top: 13px; }
+.heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 12px; }
+.context { color: var(--muted); font-size: 13px; margin: 0 0 2px; }
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(1.8rem, 3vw, 2.35rem); margin-bottom: 0; line-height: 1.15; letter-spacing: -.04em; }
+h2 { font-size: 1.14rem; letter-spacing: -.02em; margin-bottom: 0; }
+h3 { font-size: .82rem; font-weight: 680; margin: 0 0 4px; }
+.filters { display: flex; gap: 10px; }
+.filters label { display: grid; gap: 4px; min-width: 135px; }
+.filters label:last-child { min-width: 210px; }
+.filters label span, .team-detail label { font-size: 13px; font-weight: 650; color: var(--muted); }
+select {
+  appearance: none; background: var(--white); color: #192c25; border: 1px solid #cbd9d0;
+  border-radius: 8px; padding: 7px 31px 7px 10px; font-size: 14px; min-height: 38px;
+  background-image: linear-gradient(45deg, transparent 50%, #4d665d 50%), linear-gradient(135deg, #4d665d 50%, transparent 50%);
+  background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%;
+  background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+}
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 12px; }
+.kpi, .panel { background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+.kpi { padding: 9px 15px; display: flex; flex-direction: column; }
+.kpi-label { font-size: 13px; font-weight: 670; color: #315048; }
+.kpi-label span { color: var(--muted); font-weight: 500; }
+.kpi-value { font-weight: 690; font-size: clamp(1.95rem, 3.6vw, 2.45rem); line-height: 1.04; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.kpi-value small { font-size: .47em; letter-spacing: 0; margin-left: 5px; font-weight: 600; }
+.kpi-detail { font-size: 12.5px; font-weight: 620; margin-top: 3px; }
+.kpi-period { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.kpi.annual { background: #e9f3eb; border-color: #d4e5d8; }
+.overview-grid, .comments-grid { display: grid; grid-template-columns: minmax(0, 1.27fr) minmax(0, 1fr); gap: 12px; }
+.panel { min-width: 0; padding: 13px 15px; }
+.panel-heading { display: flex; align-items: start; gap: 10px; justify-content: space-between; margin-bottom: 7px; }
+.panel-heading p, .comment-preview p { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+.mini-tabs { display: flex; flex-wrap: wrap; gap: 3px; justify-content: flex-end; }
+.mini-tabs button { border: 0; background: #edf2ee; color: #394f46; font-size: 13px; border-radius: 6px; padding: 5px 7px; }
+.mini-tabs button[aria-pressed="true"] { background: var(--soft); color: var(--green); font-weight: 700; }
+.chart { height: 120px; position: relative; }
+.chart svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.chart .grid { stroke: #dfebe1; stroke-width: 1; }
+.chart .axis { fill: var(--muted); font-size: 13px; }
+.chart .trend-line { stroke: var(--green); stroke-width: 3; fill: none; stroke-linecap: round; }
+.chart .point { fill: #fff; stroke: var(--green); stroke-width: 3; }
+.chart .point.current { fill: var(--green); }
+.chart .value-label { fill: #183c31; font-size: 14px; font-weight: 700; }
+.evidence-note { background: var(--soft); border-radius: 8px; padding: 9px 11px; color: #284b3f; font-size: 13px; }
+.evidence-note p { margin: 3px 0 0; }
+.attention-row {
+  display: grid; grid-template-columns: minmax(112px, .44fr) minmax(0, 1fr); column-gap: 10px;
+  border-top: 1px solid var(--line); padding: 7px 0; min-height: 0;
+}
+.attention-row h3 { grid-row: 1 / span 2; margin: 3px 0 0; line-height: 1.2; }
+.attention-row:last-child { padding-bottom: 0; }
+#retail-focus, .compact-list { display: flex; gap: 4px 7px; flex-wrap: wrap; align-items: center; }
+#retail-focus span, .compact-list .muted { color: var(--muted); font-size: 12.5px; }
+#retail-focus .text-button { padding: 2px 1px; }
+#previous-signal:not(:empty) { margin-top: 4px; }
+.team-chip, .detail-signal {
+  display: inline-flex; align-items: baseline; gap: 6px; border: 1px solid #d8e5dc; border-radius: 6px;
+  background: #f1f7f3; color: #234c3f; padding: 3px 7px; font-size: 12.5px; text-align: left;
+}
+.team-chip:hover, .detail-signal:hover { border-color: var(--green); }
+.signal { background: #fbf4e9; border-color: #eee0c8; color: var(--amber); }
+.signal.confirmed { background: #e8f3ed; border-color: #d3e7db; color: var(--green); }
+.division-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 13px; margin-top: 13px; border-top: 1px solid var(--line); }
+.statistical-detail h3 { margin-bottom: 8px; }
+.detail-signal { display: flex; margin-bottom: 5px; font-size: 13px; }
+.team-detail label { display: inline-block; margin-right: 9px; }
+.team-detail select { min-height: 32px; padding-top: 4px; padding-bottom: 4px; }
+.team-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; margin-top: 7px; }
+.team-values dd { margin: 0; font-weight: 680; font-variant-numeric: tabular-nums; font-size: 17px; }
+.team-values dt, .team-meta, .caption { color: var(--muted); font-size: 13px; }
+.team-meta { margin: 4px 0 0; }
+.empty { color: var(--muted); font-size: 14px; padding: 7px 0; margin: 0; }
+.panel-heading .text-button { white-space: nowrap; }
+.text-button, td button { border: 0; color: var(--green); background: transparent; font-weight: 650; padding: 4px; text-align: left; }
+.text-button { font-size: 13px; }
+.text-button:hover, td button:hover { text-decoration: underline; }
+.footer { color: var(--muted); margin: 9px 0; font-size: 12px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; text-align: left; width: 100%; font-size: 14px; }
+th { color: var(--muted); font-weight: 650; }
+th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); }
+tr.selected { background: var(--soft); }
+.table-bar { display: flex; align-items: center; gap: 7px; }
+.table-bar > i { width: clamp(50px, 8vw, 115px); height: 6px; border-radius: 8px; background: #e2efe5; }
+.table-bar > i > i { height: 100%; display: block; border-radius: inherit; background: var(--green); }
+.caption { margin: 10px 0 0; }
+#panel-note { margin: 4px 0 0; font-size: 12.5px; }
+.tone-bar { display: flex; height: 7px; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #dbe4de, #dbe4de 3px, #edf1ee 3px, #edf1ee 6px); }
+.tone-bar span { flex: 0 0 auto; }
+.tone-bar .positive { background: #397f68; }
+.tone-bar .negative { background: #b36a5e; }
+.tone-bar .neutral { background: #627980; }
+.tone-bar .mixed { background: #aa873a; }
+.tone-bar .unclear { background: #839189; }
+.tone-legend { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; margin: 5px 0 8px; padding: 0; }
+.tone-legend li { min-width: 0; display: flex; flex-direction: column; font-size: 11.5px; color: var(--muted); overflow-wrap: anywhere; }
+.tone-legend strong { font-size: 15px; font-variant-numeric: tabular-nums; }
+.tone-legend .positive strong { color: var(--green); }
+.tone-legend .negative strong { color: var(--rose); }
+.tone-legend .masked-tone strong { font-size: 12px; line-height: 20px; }
+.topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.polarity { min-width: 0; padding-top: 6px; border-top: 1px solid var(--line); }
+.polarity.positive h3 { color: var(--green); }
+.polarity.negative h3 { color: var(--rose); }
+.polarity-list { list-style: none; margin: 0; padding: 0; }
+.polarity-list li { display: flex; gap: 5px; justify-content: space-between; padding: 2px 0; font-size: 13px; }
+.polarity-list strong, .market-panel td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.market-panel th, .market-panel td { padding: 5px 6px; }
+.market-panel tbody th { font-weight: 650; color: inherit; }
+.market-panel a { color: var(--green); text-underline-offset: 3px; }
+.market-panel td, .market-panel thead th:not(:first-child) { text-align: right; }
+.market-panel .case-rate { background: #edf5ef; }
+.market-panel .case-rate td { font-weight: 700; }
+.market-caption { margin-top: 7px; font-size: 12.5px; }
+.score-links { display: grid; gap: 2px; margin-bottom: 8px; }
+.score-links div { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+.score-links strong { font-variant-numeric: tabular-nums; }
+dialog { max-width: min(620px, calc(100vw - 30px)); border: 1px solid var(--line); border-radius: 13px; padding: 18px; color: inherit; }
+dialog::backdrop { background: #102c25a8; }
+.dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.dialog-heading button { background: var(--soft); border: 0; border-radius: 7px; padding: 8px; color: var(--green); }
+dialog li { margin-bottom: 10px; }
+@media (max-width: 1090px) {
+  .shell { padding-left: 21px; padding-right: 21px; }
+  .panel-heading { flex-wrap: wrap; }
+  .mini-tabs { justify-content: flex-start; }
+}
+@media (max-width: 740px) {
+  .masthead-inner, .heading { flex-wrap: wrap; }
+  .masthead-inner { padding-top: 8px; padding-bottom: 8px; gap: 7px; }
+  .navigation { order: 3; width: 100%; }
+  .shell { padding-left: 13px; padding-right: 13px; }
+  .overview-grid, .comments-grid, .division-detail { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .kpi { padding: 8px 10px; }
+  .filters label:last-child { min-width: 0; }
+  .filters { width: 100%; }
+  .filters label:last-child { flex: 1; }
+  .filters select { width: 100%; }
+}
+@media (max-width: 460px) {
+  .chart { height: 101px; }
+  .chart .axis, .chart .value-label { font-size: 20px; }
+  .tone-legend { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .attention-row { display: block; }
+  .attention-row h3 { margin: 0 0 4px; }
+}
+</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i></span>Пульс и риск текучести</div>
+      <nav class="navigation" aria-label="Разделы панели">
+        <button type="button" data-view="overview" aria-pressed="true">Обзор</button>
+        <button type="button" data-view="divisions" aria-pressed="false">Подразделения</button>
+        <button type="button" data-view="comments" aria-pressed="false">Комментарии</button>
+      </nav>
+      <button id="open-method" class="method-button" type="button">Методика</button>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="heading">
+      <div>
+        <p class="context">HR-аналитика · Синтетические данные</p>
+        <h1 id="view-title">Пульс сотрудников</h1>
+      </div>
+      <div class="filters" aria-label="Фильтры">
+        <label for="wave"><span>Волна</span><select id="wave"></select></label>
+        <label for="division" id="division-filter" hidden><span>Дивизион</span><select id="division"></select></label>
+      </div>
+    </div>
+    <section class="kpis" aria-label="Ключевые показатели" aria-live="polite">
+      <article class="kpi">
+        <div class="kpi-label">Участие в опросе</div>
+        <div id="participation-value" class="kpi-value"></div>
+        <div id="participation-detail" class="kpi-detail"></div>
+        <div id="participation-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Вовлечённость</div>
+        <div id="engagement-value" class="kpi-value"></div>
+        <div id="engagement-detail" class="kpi-detail"></div>
+        <div id="engagement-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi">
+        <div class="kpi-label">Готовность рекомендовать <span>· eNPS</span></div>
+        <div id="recommend_signal-value" class="kpi-value"></div>
+        <div id="recommend_signal-detail" class="kpi-detail"></div>
+        <div id="recommend_signal-period" class="kpi-period"></div>
+      </article>
+      <article class="kpi annual">
+        <div class="kpi-label">Годовая текучесть</div>
+        <div id="annual-value" class="kpi-value"></div>
+        <div id="annual-voluntary" class="kpi-detail"></div>
+        <div id="annual-period" class="kpi-period"></div>
+      </article>
+    </section>
+
+    <div id="overview" class="overview-grid view">
+      <section class="panel trend-panel">
+        <div class="panel-heading">
+          <div><h2>Что изменилось</h2><p id="trend-scope"></p></div>
+          <div class="mini-tabs" aria-label="Показатель графика">
+            <button type="button" data-metric="engagement" aria-pressed="true">Вовлечённость</button>
+            <button type="button" data-metric="participation" aria-pressed="false">Участие</button>
+            <button type="button" data-metric="recommend_signal" aria-pressed="false">eNPS</button>
+          </div>
+        </div>
+        <div id="trend" class="chart"></div>
+        <p id="panel-note" class="caption"></p>
+      </section>
+      <section class="panel attention-panel">
+        <div class="panel-heading"><h2>Где требуется внимание</h2><button type="button" class="text-button" id="open-divisions">Подробнее <span aria-hidden="true">→</span></button></div>
+        <div class="attention-row">
+          <h3>Текучесть дивизиона</h3>
+          <div id="retail-focus"></div>
+        </div>
+        <div class="attention-row">
+          <h3>Обе оценки ниже уровня блока</h3>
+          <div id="adverse-teams" class="compact-list"></div>
+        </div>
+        <div class="attention-row">
+          <h3>Парное снижение вовлечённости</h3>
+          <div id="signals" class="compact-list"></div>
+          <div id="previous-signal" class="compact-list"></div>
+        </div>
+      </section>
+      <section class="panel comment-preview">
+        <div class="panel-heading">
+          <div><h2>Что говорят сотрудники</h2><p id="preview-comment-base"></p></div>
+          <button type="button" class="text-button" id="open-comments">Подробнее <span aria-hidden="true">→</span></button>
+        </div>
+        <div id="preview-tones"></div>
+        <div id="preview-topics" class="topics-grid"></div>
+      </section>
+      <section class="panel market-panel">
+        <div class="panel-heading"><div><h2>Текучесть и рынок</h2><p id="market-period"></p></div></div>
+        <table aria-label="Сопоставление годовой текучести">
+          <thead><tr><th scope="col">Организация</th><th scope="col">Общая</th><th scope="col">Добровольная</th></tr></thead>
+          <tbody id="market-rows"></tbody>
+        </table>
+        <p class="caption market-caption">Ограниченная сопоставимость периодов и методик. Репрезентативного среднерыночного ориентира нет.</p>
+      </section>
+    </div>
+
+    <section id="divisions" class="panel view" hidden>
+      <div class="panel-heading"><div><h2>Сравнение дивизионов</h2><p id="division-comparison-period"></p></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Дивизион</th><th scope="col">Вовлечённость, баллы</th><th scope="col">Участие, %</th><th scope="col">eNPS, пункты</th><th scope="col">Текучесть за год, %</th></tr></thead>
+          <tbody id="division-rows"></tbody>
+        </table>
+      </div>
+      <p class="caption">Выберите дивизион, чтобы сузить список команд. Период текучести фиксирован.</p>
+      <div class="division-detail">
+        <div class="team-detail">
+          <label for="team">Показатели команды</label>
+          <select id="team"></select>
+          <div id="team-metrics" aria-live="polite"></div>
+        </div>
+        <div class="statistical-detail">
+          <h3>Проверка парных изменений</h3>
+          <div id="detail-signals"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="comments" class="comments-grid view" hidden>
+      <section class="panel">
+        <div class="panel-heading"><div><h2>Темы и тональность</h2><p id="comments-scope"></p></div></div>
+        <div id="tones"></div>
+        <div id="topics" class="topics-grid"></div>
+        <p class="caption">Тональность относится ко всему комментарию. Доли описывают содержательные записи. В одной записи может быть несколько тем. Часть тем скрыта для защиты малых групп.</p>
+      </section>
+      <section class="panel">
+        <div class="panel-heading"><div><h2>Темы и баллы опроса</h2><p id="topic-score-scope"></p></div></div>
+        <div id="score-links" class="score-links"></div>
+        <div class="evidence-note"><strong>Проверка модели</strong><p>Метки Gemini проверены на знакомых синтетических шаблонах. Серьёзность требует ручной проверки и не влияет на список команд.</p></div>
+      </section>
+    </div>
+    <footer class="footer">Источники · Сведённые ответы, реестр увольнений и агрегаты комментариев</footer>
+  </main>
+  <dialog id="method" aria-labelledby="method-title">
+    <div class="dialog-heading"><h2 id="method-title">Как читать панель</h2><button type="button" id="close-method">Закрыть</button></div>
+    <ul>
+      <li><strong>Участие</strong> — доля уникальных активных сотрудников с ответом к дате волны. День увольнения считается первым неактивным днём.</li>
+      <li><strong>Вовлечённость</strong> — среднее четырёх вопросов о признании, развитии, руководителе и целях, переведённое в шкалу 0–100. eNPS — разница долей сторонников и критиков в пунктах.</li>
+      <li><strong>Текучесть</strong> — все или только добровольные увольнения за год, делённые на среднюю ежедневную численность. Годовое окно фиксировано. Банковские раскрытия относятся к календарному 2025 году. В методике ДОМ.РФ указаны ставки уволенных работников и среднесписочная численность. <a href="https://domrfbank.ru/upload/reports/2025/appendices/appendix-14/" target="_blank" rel="noopener noreferrer">Методика Банка ДОМ.РФ</a></li>
+      <li><strong>Срез команд</strong> — вовлечённость и eNPS ниже соответствующих значений по всему блоку на той же волне. В обзоре показаны до трёх таких команд с самой низкой вовлечённостью среди доступных к публикации. Это описательный отбор по уровню.</li>
+      <li><strong>Парное изменение команды</strong> — верхняя граница исходного 95%-ного интервала ниже нуля при ≥10 валидных парах. Выделение после поправки означает q ≤ 0,05 по Бенджамини — Хохбергу среди всех проверяемых команд данного перехода.</li>
+      <li id="method-panel-note"></li>
+      <li id="method-model"></li>
+      <li><strong>Комментарии</strong> — доли среди содержательных записей. В теме положительных или отрицательных учитываются записи именно этой тональности. Смешанные отдельно учитываются в распределении тональности и в сопоставлении с баллами опроса. Контрольная выборка знакомых шаблонов подготовлена с ИИ и проверена человеком.</li>
+      <li><strong>Конфиденциальность</strong> — командные данные для малых выборок и связанные с ними дополняющие срезы скрыты на всех волнах. Малые категории комментариев и дополняющие срезы могут быть скрыты дополнительно.</li>
+    </ul>
+  </dialog>
+  <script id="snapshot" type="application/json">{"annual":{"end":"2026-09-30","start":"2025-10-01","value":{"":14.42164866,"ИТ-платформа":16.84278529,"Корпоративный бизнес":14.35898988,"Операционный блок":8.221514303,"Розничный блок":20.19393163,"Функция HR":12.22043659},"voluntary":{"":13.12044728,"ИТ-платформа":16.84278529,"Корпоративный бизнес":13.25445219,"Операционный блок":6.459761238,"Розничный блок":18.59967387,"Функция HR":10.26516673}},"comments":{"2026-03":{"":{"n":431,"negative_topics":{"адаптация":6.3,"инструменты":4.4,"нагрузка":8.8,"оплата":null,"признание":8.6,"развитие":6.0,"руководитель":5.3,"условия":null,"цели":3.9},"positive_topics":{"адаптация":7.0,"инструменты":4.6,"нагрузка":5.8,"оплата":7.4,"признание":7.2,"развитие":10.9,"руководитель":null,"условия":null,"цели":8.4},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":40.6,"положительная":50.3,"смешанная":null}},"ИТ-платформа":{"n":84,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":44.0,"положительная":48.8,"смешанная":null}},"Корпоративный бизнес":{"n":92,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":50.0,"смешанная":0.0}},"Операционный блок":{"n":64,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":65.6,"смешанная":null}},"Розничный блок":{"n":96,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":10.4,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":10.4,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":45.8,"положительная":43.8,"смешанная":null}},"Функция HR":{"n":94,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":41.5,"положительная":48.9,"смешанная":null}}},"2026-06":{"":{"n":406,"negative_topics":{"адаптация":3.2,"инструменты":null,"нагрузка":12.6,"оплата":null,"признание":7.1,"развитие":7.1,"руководитель":6.2,"условия":null,"цели":4.4},"positive_topics":{"адаптация":7.6,"инструменты":null,"нагрузка":7.9,"оплата":8.4,"признание":7.1,"развитие":10.6,"руководитель":10.1,"условия":null,"цели":5.7},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":39.9,"положительная":51.7,"смешанная":null}},"ИТ-платформа":{"n":79,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":44.3,"положительная":45.6,"смешанная":null}},"Корпоративный бизнес":{"n":69,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":40.6,"положительная":50.7,"смешанная":null}},"Операционный блок":{"n":68,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":63.2,"смешанная":null}},"Розничный блок":{"n":87,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":46.0,"смешанная":0.0}},"Функция HR":{"n":99,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":13.1,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":12.1,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":39.4,"положительная":55.6,"смешанная":null}}},"2026-09":{"":{"n":379,"negative_topics":{"адаптация":6.1,"инструменты":4.5,"нагрузка":11.3,"оплата":null,"признание":6.9,"развитие":6.6,"руководитель":6.9,"условия":3.2,"цели":4.0},"positive_topics":{"адаптация":6.1,"инструменты":3.4,"нагрузка":6.1,"оплата":7.7,"признание":4.7,"развитие":11.3,"руководитель":null,"условия":3.4,"цели":6.6},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":39.1,"положительная":50.1,"смешанная":null}},"ИТ-платформа":{"n":77,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":51.9,"положительная":40.3,"смешанная":null}},"Корпоративный бизнес":{"n":66,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":37.9,"положительная":51.5,"смешанная":null}},"Операционный блок":{"n":76,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":59.2,"смешанная":0.0}},"Розничный блок":{"n":73,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":null,"положительная":45.2,"смешанная":0.0}},"Функция HR":{"n":86,"negative_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"positive_topics":{"адаптация":null,"инструменты":null,"нагрузка":null,"оплата":null,"признание":null,"развитие":null,"руководитель":null,"условия":null,"цели":null},"tone":{"нейтральная":null,"неопределенная":0.0,"отрицательная":31.4,"положительная":53.5,"смешанная":null}}}},"divisions":["ИТ-платформа","Корпоративный бизнес","Операционный блок","Розничный блок","Функция HR"],"market":[{"name":"Банк ДОМ.РФ","published":"2026-05-04","rates":{"value":21.1,"voluntary":18.6},"url":"https://domrfbank.ru/upload/reports/2025/sustainable-development/employee-care/"},{"name":"Банк ВТБ","published":"2026-08-28","rates":{"value":27.0,"voluntary":19.0},"url":"https://rspp.ru/upload/uf/597/e0sof6szlemonp9s9oqyf9bix29qwwne/vtb_sustainability_report_2025_rus.pdf#page=87"}],"outcome_model":[0.8199573295,0.6882337438,0.9768919764],"paired":{"":{"2026-06":{"delta":0.4571655734,"hi":1.229479315,"lo":-0.315148168},"2026-09":{"delta":-0.1304631442,"hi":0.6471761319,"lo":-0.9081024202}},"ИТ-платформа":{"2026-06":{"delta":-1.04510451,"hi":0.8312797029,"lo":-2.921488724},"2026-09":{"delta":-0.02955082742,"hi":1.698774607,"lo":-1.757876262}},"Корпоративный бизнес":{"2026-06":{"delta":2.157497303,"hi":4.140563012,"lo":0.1744315939},"2026-09":{"delta":1.373626374,"hi":3.360479222,"lo":-0.6132264747}},"Операционный блок":{"2026-06":{"delta":0.6625891947,"hi":2.338740752,"lo":-1.013562363},"2026-09":{"delta":-0.6813417191,"hi":1.06078019,"lo":-2.423463628}},"Розничный блок":{"2026-06":{"delta":-0.2458210423,"hi":1.391832079,"lo":-1.883474164},"2026-09":{"delta":-0.6050605061,"hi":1.197540028,"lo":-2.40766104}},"Функция HR":{"2026-06":{"delta":0.7101086048,"hi":2.217214297,"lo":-0.7969970877},"2026-09":{"delta":-0.466853408,"hi":1.030843423,"lo":-1.964550239}}},"signals":[{"confirmed":true,"delta":-8.11965812,"hi":-3.528796047,"lo":-12.71052019,"n":13,"previous":"2026-03","q":0.018,"team":"T16","wave":"2026-06"},{"confirmed":false,"delta":-6.944444444,"hi":-0.09379463779,"lo":-13.79509425,"n":10,"previous":"2026-06","q":0.637,"team":"T06","wave":"2026-09"},{"confirmed":false,"delta":-4.012345679,"hi":-0.4305422326,"lo":-7.594149125,"n":18,"previous":"2026-06","q":0.637,"team":"T34","wave":"2026-09"}],"survey":{"":{"2026-03":{"engagement":[61.74378556,60.80177418,62.68579695],"participation":[80.04291845,77.35594043,82.48325506],"recommend_signal":[-6.970509383,-12.67245159,-1.268567174]},"2026-06":{"engagement":[62.46779388,61.48777616,63.4478116],"participation":[77.74086379,74.9133471,80.33335508],"recommend_signal":[-10.96866097,-16.68471522,-5.252606714]},"2026-09":{"engagement":[62.62467192,61.60371612,63.64562771],"participation":[74.27912341,71.26699638,77.07705014],"recommend_signal":[-9.937888199,-16.04193726,-3.833839135]}},"ИТ-платформа":{"2026-03":{"engagement":[60.95008052,58.94922018,62.95094085],"participation":[77.22222222,70.56425365,82.74254702],"recommend_signal":[-12.94964029,-26.04788683,0.1486062502]},"2026-06":{"engagement":[60.85069444,58.62659789,63.074791],"participation":[75.72254335,68.81980906,81.50775586],"recommend_signal":[-19.08396947,-31.67029711,-6.497641825]},"2026-09":{"engagement":[61.68430335,59.48137567,63.88723104],"participation":[77.10843373,70.14710488,82.84349036],"recommend_signal":[-16.40625,-29.94396203,-2.868537965]}},"Корпоративный бизнес":{"2026-03":{"engagement":[61.86868687,59.64537598,64.09199776],"participation":[78.80434783,72.34112603,84.08944082],"recommend_signal":[-12.4137931,-24.97522648,0.1476402774]},"2026-06":{"engagement":[64.09774436,61.90367522,66.29181351],"participation":[77.27272727,70.53776032,82.84258959],"recommend_signal":[0.7352941176,-12.44216146,13.9127497]},"2026-09":{"engagement":[64.21845574,61.82406594,66.61284554],"participation":[69.18604651,61.92955271,75.60425783],"recommend_signal":[-12.60504202,-25.95115915,0.7410751117]}},"Операционный блок":{"2026-03":{"engagement":[64.62301587,62.50138813,66.74464362],"participation":[81.39534884,74.91700871,86.50195398],"recommend_signal":[9.285714286,-3.878843178,22.45027175]},"2026-06":{"engagement":[65.13994911,62.89855311,67.3813451],"participation":[77.5147929,70.64936482,83.15717016],"recommend_signal":[-5.34351145,-18.66104292,7.974020015]},"2026-09":{"engagement":[65.12345679,62.90245951,67.34445407],"participation":[79.14110429,72.26860022,84.67168349],"recommend_signal":[7.751937984,-5.994576466,21.49845244]}},"Розничный блок":{"2026-03":{"engagement":[59.95670996,57.78954521,62.1238747],"participation":[81.57894737,75.46014995,86.44611135],"recommend_signal":[-12.90322581,-25.16463294,-0.641818668]},"2026-06":{"engagement":[59.90937746,57.73778155,62.08097338],"participation":[78.57142857,72.05197974,83.90969892],"recommend_signal":[-27.27272727,-39.60280147,-14.94265308]},"2026-09":{"engagement":[60.51423324,58.22623184,62.80223464],"participation":[69.94219653,62.73734553,76.28065424],"recommend_signal":[-17.3553719,-31.47495558,-3.235788221]}},"Функция HR":{"2026-03":{"engagement":[61.52694611,59.56357926,63.49031296],"participation":[81.06796117,75.1681819,85.8302503],"recommend_signal":[-5.389221557,-17.87572858,7.09728547]},"2026-06":{"engagement":[62.47346072,60.4202908,64.52663065],"participation":[79.31034483,73.21881591,84.31317051],"recommend_signal":[-4.347826087,-16.4795962,7.783944028]},"2026-09":{"engagement":[61.72839506,59.48933298,63.96745714],"participation":[76.16580311,69.68120237,81.62912657],"recommend_signal":[-11.56462585,-24.74339934,1.614147635]}}},"teams":[{"division":"Розничный блок","id":"T01","waves":{"2026-03":{"active":19,"engagement":[63.19444444,55.45498126,70.93390763],"participation":[84.21052632,62.43452473,94.47952836],"recommend_signal":[12.5,-27.00433705,52.00433705],"respondents":16},"2026-06":{"active":19,"engagement":[61.11111111,53.14140696,69.08081526],"participation":[84.21052632,62.43452473,94.47952836],"recommend_signal":[-25.0,-70.61567926,20.61567926],"respondents":16},"2026-09":{"active":19,"engagement":[63.46153846,57.98774325,68.93533367],"participation":[68.42105263,46.01040768,84.63562091],"recommend_signal":[-15.38461538,-64.23853216,33.46930139],"respondents":13}}},{"division":"Розничный блок","id":"T02","waves":{"2026-03":{"active":30,"engagement":[66.34615385,62.55819341,70.13411428],"participation":[86.66666667,70.31867332,94.69034452],"recommend_signal":[11.53846154,-17.8899775,40.96690057],"respondents":26},"2026-06":{"active":29,"engagement":[62.77777778,57.93873863,67.61681693],"participation":[86.20689655,69.44100628,94.50256004],"recommend_signal":[-16.0,-45.24662084,13.24662084],"respondents":25},"2026-09":{"active":28,"engagement":[66.41414141,62.10205539,70.72622744],"participation":[78.57142857,60.46141435,89.78753967],"recommend_signal":[13.63636364,-21.1948237,48.46755097],"respondents":22}}},{"division":"Розничный блок","id":"T03","waves":{"2026-03":{"active":22,"engagement":[52.62345679,46.14754443,59.09936915],"participation":[81.81818182,61.48339256,92.69311542],"recommend_signal":[-55.55555556,-83.99886459,-27.11224652],"respondents":18},"2026-06":{"active":22,"engagement":[50.97222222,45.92527648,56.01916797],"participation":[95.45454545,78.20195416,99.19305724],"recommend_signal":[-57.14285714,-82.70277348,-31.5829408],"respondents":21},"2026-09":{"active":21,"engagement":[52.31481481,45.38810471,59.24152492],"participation":[57.14285714,36.54655437,75.53003107],"recommend_signal":[-41.66666667,-79.49319709,-3.840136239],"respondents":12}}},{"division":"Розничный блок","id":"T04","waves":{"2026-03":{"active":26,"engagement":[57.93650794,52.22290117,63.6501147],"participation":[84.61538462,66.46880067,93.84996628],"recommend_signal":[-22.72727273,-54.13496423,8.680418777],"respondents":22},"2026-06":{"active":24,"engagement":[59.31372549,53.5402364,65.08721458],"participation":[70.83333333,50.83230634,85.0853518],"recommend_signal":[-29.41176471,-62.02126646,3.197737044],"respondents":17},"2026-09":{"active":24,"engagement":[57.67973856,52.14547612,63.21400101],"participation":[70.83333333,50.83230634,85.0853518],"recommend_signal":[-47.05882353,-81.16265678,-12.95499028],"respondents":17}}},{"division":"Розничный блок","id":"T05","waves":{"2026-03":{"active":25,"engagement":[60.45751634,54.86449356,66.05053912],"participation":[68.0,48.41026927,82.79480969],"recommend_signal":[0.0,-37.58059389,37.58059389],"respondents":17},"2026-06":{"active":25,"engagement":[62.77777778,57.36463331,68.19092224],"participation":[60.0,40.73945736,76.59669762],"recommend_signal":[-26.66666667,-62.27974244,8.946409109],"respondents":15},"2026-09":{"active":25,"engagement":[60.55555556,54.72918321,66.3819279],"participation":[80.0,60.86904963,91.13941531],"recommend_signal":[10.0,-24.53800884,44.53800884],"respondents":20}}},{"division":"Розничный блок","id":"T06","waves":{"2026-03":{"active":25,"engagement":[60.55555556,54.20395687,66.90715424],"participation":[80.0,60.86904963,91.13941531],"recommend_signal":[-15.0,-50.61870746,20.61870746],"respondents":20},"2026-06":{"active":23,"engagement":[63.88888889,57.75582623,70.02195155],"participation":[82.60869565,62.86235236,93.02134644],"recommend_signal":[-21.05263158,-56.45449873,14.34923557],"respondents":19},"2026-09":{"active":21,"engagement":[64.81481481,57.74372704,71.88590259],"participation":[57.14285714,36.54655437,75.53003107],"recommend_signal":[16.66666667,-30.56838732,63.90172065],"respondents":12}}},{"division":"Розничный блок","id":"T07","waves":{"2026-03":{"active":21,"engagement":[53.24074074,46.05875261,60.42272887],"participation":[85.71428571,65.36393972,95.0189875],"recommend_signal":[-44.44444444,-77.003584,-11.88530489],"respondents":18},"2026-06":{"active":19,"engagement":[52.77777778,47.06104997,58.49450559],"participation":[68.42105263,46.01040768,84.63562091],"recommend_signal":[-46.15384615,-82.04344235,-10.26424995],"respondents":13},"2026-09":{"active":15,"engagement":[49.49494949,41.35923729,57.6306617],"participation":[73.33333333,48.04956594,89.10254667],"recommend_signal":[-63.63636364,-93.45133671,-33.82139056],"respondents":11}}},{"division":"Розничный блок","id":"T08","waves":{"2026-03":{"active":22,"engagement":[63.11728395,57.9503461,68.2842218],"participation":[81.81818182,61.48339256,92.69311542],"recommend_signal":[5.555555556,-31.51117135,42.62228246],"respondents":18},"2026-06":{"active":21,"engagement":[64.21568627,58.02430899,70.40706356],"participation":[80.95238095,59.99943531,92.33243495],"recommend_signal":[0.0,-41.16747799,41.16747799],"respondents":17},"2026-09":{"active":20,"engagement":[63.88888889,57.3816527,70.39612508],"participation":[70.0,48.10271816,85.45227551],"recommend_signal":[-42.85714286,-76.70687024,-9.007415475],"respondents":14}}},{"division":"ИТ-платформа","id":"T09","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"ИТ-платформа","id":"T10","waves":{"2026-03":{"active":27,"engagement":[61.11111111,54.76128255,67.46093968],"participation":[62.96296296,44.22923441,78.46748704],"recommend_signal":[-5.882352941,-41.41773362,29.65302774],"respondents":17},"2026-06":{"active":26,"engagement":[64.05228758,57.9390545,70.16552067],"participation":[69.23076923,50.01174168,83.4986844],"recommend_signal":[-33.33333333,-65.02407267,-1.642593997],"respondents":18},"2026-09":{"active":24,"engagement":[62.91666667,58.88338187,66.94995146],"participation":[83.33333333,64.14692935,93.32132367],"recommend_signal":[10.0,-18.08041966,38.08041966],"respondents":20}}},{"division":"ИТ-платформа","id":"T11","waves":{"2026-03":{"active":24,"engagement":[59.25925926,54.45779881,64.06071971],"participation":[87.5,68.99611873,95.65566592],"recommend_signal":[-28.57142857,-62.09294459,4.950087444],"respondents":21},"2026-06":{"active":24,"engagement":[66.17647059,60.91048174,71.44245944],"participation":[70.83333333,50.83230634,85.0853518],"recommend_signal":[35.29411765,11.87820194,58.71003336],"respondents":17},"2026-09":{"active":24,"engagement":[65.74074074,56.86701775,74.61446373],"participation":[50.0,31.42742582,68.57257418],"recommend_signal":[8.333333333,-42.6070714,59.27373807],"respondents":12}}},{"division":"ИТ-платформа","id":"T12","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"ИТ-платформа","id":"T13","waves":{"2026-03":{"active":27,"engagement":[61.60130719,57.57894334,65.62367104],"participation":[62.96296296,44.22923441,78.46748704],"recommend_signal":[-23.52941176,-55.10342607,8.044602536],"respondents":17},"2026-06":{"active":27,"engagement":[59.12698413,53.68078822,64.57318003],"participation":[81.48148148,63.30131638,91.81929286],"recommend_signal":[-18.18181818,-51.4023965,15.03876014],"respondents":22},"2026-09":{"active":27,"engagement":[60.64814815,56.01747814,65.27881815],"participation":[88.88888889,71.94219918,96.14796517],"recommend_signal":[-20.83333333,-47.1585456,5.491878938],"respondents":24}}},{"division":"ИТ-платформа","id":"T14","waves":{"2026-03":{"active":21,"engagement":[66.82098765,61.77417856,71.86779675],"participation":[85.71428571,65.36393972,95.0189875],"recommend_signal":[11.11111111,-27.3408997,49.56312192],"respondents":18},"2026-06":{"active":20,"engagement":[64.40972222,57.98288273,70.83656171],"participation":[80.0,58.39825677,91.93423374],"recommend_signal":[-6.25,-51.75589407,39.25589407],"respondents":16},"2026-09":{"active":20,"engagement":[62.90849673,57.73213261,68.08486085],"participation":[85.0,63.95811353,94.76312541],"recommend_signal":[-11.76470588,-55.85541737,32.3260056],"respondents":17}}},{"division":"ИТ-платформа","id":"T15","waves":{"2026-03":{"active":20,"engagement":[59.31372549,53.99203597,64.63541501],"participation":[85.0,63.95811353,94.76312541],"recommend_signal":[-29.41176471,-69.76396439,10.94043498],"respondents":17},"2026-06":{"active":19,"engagement":[59.07407407,50.71594074,67.43220741],"participation":[78.94736842,56.66572156,91.49232337],"recommend_signal":[-26.66666667,-62.27974244,8.946409109],"respondents":15},"2026-09":{"active":18,"engagement":[59.92063492,51.30831741,68.53295243],"participation":[83.33333333,60.7779619,94.16342319],"recommend_signal":[-20.0,-63.61693191,23.61693191],"respondents":15}}},{"division":"ИТ-платформа","id":"T16","waves":{"2026-03":{"active":22,"engagement":[64.9122807,59.1401505,70.68441091],"participation":[90.90909091,72.18505316,97.4704571],"recommend_signal":[30.0,-2.111188397,62.1111884],"respondents":20},"2026-06":{"active":22,"engagement":[57.03703704,50.57624024,63.49783384],"participation":[72.72727273,51.84826599,86.84923971],"recommend_signal":[-37.5,-67.83726272,-7.162737284],"respondents":16},"2026-09":{"active":22,"engagement":[63.14814815,57.61465868,68.68163762],"participation":[72.72727273,51.84826599,86.84923971],"recommend_signal":[0.0,-40.0075973,40.0075973],"respondents":16}}},{"division":"Корпоративный бизнес","id":"T17","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Корпоративный бизнес","id":"T18","waves":{"2026-03":{"active":23,"engagement":[61.11111111,54.04126879,68.18095343],"participation":[78.26086957,58.09651698,90.33602197],"recommend_signal":[-33.33333333,-60.77831866,-5.888348004],"respondents":18},"2026-06":{"active":23,"engagement":[59.87654321,54.1677862,65.58530022],"participation":[82.60869565,62.86235236,93.02134644],"recommend_signal":[-26.31578947,-55.69463092,3.063051973],"respondents":19},"2026-09":{"active":22,"engagement":[63.33333333,56.65059925,70.01606742],"participation":[68.18181818,47.31859774,83.63940682],"recommend_signal":[-20.0,-59.19927969,19.19927969],"respondents":15}}},{"division":"Корпоративный бизнес","id":"T19","waves":{"2026-03":{"active":30,"engagement":[62.31884058,56.75923224,67.87844892],"participation":[80.0,62.69430359,90.49489282],"recommend_signal":[-16.66666667,-47.12793066,13.79459733],"respondents":24},"2026-06":{"active":28,"engagement":[62.57309942,58.81753272,66.32866611],"participation":[67.85714286,49.33884318,82.06675308],"recommend_signal":[-10.52631579,-40.10569773,19.05306615],"respondents":19},"2026-09":{"active":27,"engagement":[63.88888889,58.99800809,68.77976969],"participation":[74.07407407,55.32142869,86.82962544],"recommend_signal":[-45.0,-71.50627473,-18.49372527],"respondents":20}}},{"division":"Корпоративный бизнес","id":"T20","waves":{"2026-03":{"active":31,"engagement":[62.8600823,58.31013528,67.41002933],"participation":[87.09677419,71.14759374,94.86571563],"recommend_signal":[-3.703703704,-34.17075276,26.76334535],"respondents":27},"2026-06":{"active":31,"engagement":[65.02057613,61.0974088,68.94374347],"participation":[87.09677419,71.14759374,94.86571563],"recommend_signal":[11.11111111,-19.08867797,41.31090019],"respondents":27},"2026-09":{"active":30,"engagement":[65.21164021,59.63134152,70.7919389],"participation":[70.0,52.12421254,83.33525173],"recommend_signal":[9.523809524,-28.50238279,47.55000184],"respondents":21}}},{"division":"Корпоративный бизнес","id":"T21","waves":{"2026-03":{"active":30,"engagement":[62.33333333,56.47735101,68.18931566],"participation":[83.33333333,66.43564949,92.66345763],"recommend_signal":[-24.0,-52.35745722,4.357457217],"respondents":25},"2026-06":{"active":29,"engagement":[64.35185185,58.18890938,70.51479432],"participation":[86.20689655,69.44100628,94.50256004],"recommend_signal":[0.0,-32.00607784,32.00607784],"respondents":25},"2026-09":{"active":28,"engagement":[62.16931217,56.62890349,67.70972085],"participation":[75.0,56.64432968,87.32350508],"recommend_signal":[-23.80952381,-42.47584747,-5.143200147],"respondents":21}}},{"division":"Корпоративный бизнес","id":"T22","waves":{"2026-03":{"active":28,"engagement":[55.43478261,49.83682539,61.03273983],"participation":[82.14285714,64.40857521,92.12149805],"recommend_signal":[-21.73913043,-56.49670453,13.01844366],"respondents":23},"2026-06":{"active":26,"engagement":[62.41830065,54.29033712,70.54626419],"participation":[69.23076923,50.01174168,83.4986844],"recommend_signal":[-16.66666667,-59.33163021,25.99829688],"respondents":18},"2026-09":{"active":26,"engagement":[60.80246914,53.57156877,68.0333695],"participation":[69.23076923,50.01174168,83.4986844],"recommend_signal":[-5.555555556,-42.62228246,31.51117135],"respondents":18}}},{"division":"Корпоративный бизнес","id":"T23","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Корпоративный бизнес","id":"T24","waves":{"2026-03":{"active":21,"engagement":[61.11111111,54.44317823,67.77904399],"participation":[57.14285714,36.54655437,75.53003107],"recommend_signal":[0.0,-48.25097782,48.25097782],"respondents":12},"2026-06":{"active":20,"engagement":[63.88888889,56.04275353,71.73502425],"participation":[70.0,48.10271816,85.45227551],"recommend_signal":[14.28571429,-26.06583899,54.63726756],"respondents":14},"2026-09":{"active":20,"engagement":[64.74358974,56.67339145,72.81378804],"participation":[65.0,43.28542767,81.88081759],"recommend_signal":[-15.38461538,-58.90714362,28.13791285],"respondents":13}}},{"division":"Операционный блок","id":"T25","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Операционный блок","id":"T26","waves":{"2026-03":{"active":28,"engagement":[60.83333333,53.56215872,68.10450795],"participation":[71.42857143,52.94071157,84.74600394],"recommend_signal":[-30.0,-70.46819183,10.46819183],"respondents":20},"2026-06":{"active":28,"engagement":[60.66666667,54.916243,66.41709034],"participation":[89.28571429,72.80414845,96.28816332],"recommend_signal":[-28.0,-61.02990017,5.029900168],"respondents":25},"2026-09":{"active":24,"engagement":[64.05228758,55.91959344,72.18498172],"participation":[70.83333333,50.83230634,85.0853518],"recommend_signal":[-11.76470588,-52.52658307,28.9971713],"respondents":17}}},{"division":"Операционный блок","id":"T27","waves":{"2026-03":{"active":31,"engagement":[65.53497942,61.52663592,69.54332293],"participation":[87.09677419,71.14759374,94.86571563],"recommend_signal":[3.703703704,-22.93000681,30.33741422],"respondents":27},"2026-06":{"active":31,"engagement":[64.00462963,59.6758763,68.33338296],"participation":[77.41935484,60.18758162,88.60486444],"recommend_signal":[4.166666667,-28.09747795,36.43081128],"respondents":24},"2026-09":{"active":31,"engagement":[63.54166667,58.64446977,68.43886357],"participation":[77.41935484,60.18758162,88.60486444],"recommend_signal":[16.66666667,-18.06451796,51.39785129],"respondents":24}}},{"division":"Операционный блок","id":"T28","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Операционный блок","id":"T29","waves":{"2026-03":{"active":25,"engagement":[61.99494949,57.11766046,66.87223853],"participation":[88.0,70.04420608,95.83318285],"recommend_signal":[4.545454545,-28.27451644,37.36542554],"respondents":22},"2026-06":{"active":25,"engagement":[64.05228758,57.18357119,70.92100397],"participation":[68.0,48.41026927,82.79480969],"recommend_signal":[5.882352941,-29.65302774,41.41773362],"respondents":17},"2026-09":{"active":25,"engagement":[63.35978836,58.51027381,68.20930291],"participation":[84.0,65.34637839,93.59654854],"recommend_signal":[-4.761904762,-36.41219642,26.8883869],"respondents":21}}},{"division":"Операционный блок","id":"T30","waves":{"2026-03":{"active":20,"engagement":[66.26984127,61.04353418,71.49614836],"participation":[70.0,48.10271816,85.45227551],"recommend_signal":[21.42857143,-20.57065681,63.42779967],"respondents":14},"2026-06":{"active":19,"engagement":[68.45238095,62.93059727,73.97416463],"participation":[73.68421053,51.2084491,88.19358765],"recommend_signal":[7.142857143,-25.11035139,39.39606568],"respondents":14},"2026-09":{"active":19,"engagement":[65.10416667,59.89234423,70.31598911],"participation":[84.21052632,62.43452473,94.47952836],"recommend_signal":[-12.5,-47.72032194,22.72032194],"respondents":16}}},{"division":"Операционный блок","id":"T31","waves":{"2026-03":{"active":16,"engagement":[70.37037037,64.83178169,75.90895905],"participation":[93.75,71.67126243,98.88806552],"recommend_signal":[46.66666667,14.28180549,79.05152785],"respondents":15},"2026-06":{"active":16,"engagement":[76.11111111,70.10468184,82.11754039],"participation":[93.75,71.67126243,98.88806552],"recommend_signal":[33.33333333,-7.986335487,74.65300215],"respondents":15},"2026-09":{"active":15,"engagement":[74.57264957,68.60083206,80.54446709],"participation":[93.33333333,70.18347013,98.81331045],"recommend_signal":[78.57142857,48.24555663,100.0],"respondents":14}}},{"division":"Операционный блок","id":"T32","waves":{"2026-03":{"active":24,"engagement":[65.89506173,58.93839944,72.85172402],"participation":[75.0,55.10055599,88.00063377],"recommend_signal":[66.66666667,39.22168134,94.111652],"respondents":18},"2026-06":{"active":23,"engagement":[65.10416667,59.18239924,71.02593409],"participation":[69.56521739,49.13424373,84.39597555],"recommend_signal":[-31.25,-70.11609899,7.616098992],"respondents":16},"2026-09":{"active":22,"engagement":[64.0625,58.49548037,69.62951963],"participation":[77.27272727,56.56004682,89.87696001],"recommend_signal":[-5.882352941,-41.41773362,29.65302774],"respondents":17}}},{"division":"Функция HR","id":"T33","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Функция HR","id":"T34","waves":{"2026-03":{"active":33,"engagement":[60.36324786,54.90587196,65.82062377],"participation":[78.78787879,62.24835501,89.32397847],"recommend_signal":[-15.38461538,-49.23160179,18.46237102],"respondents":26},"2026-06":{"active":33,"engagement":[64.63675214,59.75261715,69.52088712],"participation":[78.78787879,62.24835501,89.32397847],"recommend_signal":[-3.846153846,-35.50711052,27.81480283],"respondents":26},"2026-09":{"active":30,"engagement":[58.5978836,52.52944523,64.66632197],"participation":[73.33333333,55.5520383,85.81733668],"recommend_signal":[-22.72727273,-61.26730181,15.81275635],"respondents":22}}},{"division":"Функция HR","id":"T35","waves":{"2026-03":{"active":27,"engagement":[63.62433862,58.62738056,68.62129669],"participation":[77.77777778,59.24307113,89.39276055],"recommend_signal":[0.0,-33.12943801,33.12943801],"respondents":21},"2026-06":{"active":27,"engagement":[61.34259259,56.99604396,65.68914122],"participation":[88.88888889,71.94219918,96.14796517],"recommend_signal":[-20.83333333,-52.00035729,10.33369062],"respondents":24},"2026-09":{"active":25,"engagement":[57.51633987,50.4862016,64.54647813],"participation":[72.0,52.42339481,85.71614615],"recommend_signal":[-27.77777778,-62.51332753,6.957771978],"respondents":18}}},{"division":"Функция HR","id":"T36","waves":{"2026-03":null,"2026-06":null,"2026-09":null}},{"division":"Функция HR","id":"T37","waves":{"2026-03":{"active":31,"engagement":[57.0,52.2942888,61.7057112],"participation":[80.64516129,63.71974219,90.81299164],"recommend_signal":[-4.0,-36.95227397,28.95227397],"respondents":25},"2026-06":{"active":30,"engagement":[56.94444444,51.4211288,62.46776009],"participation":[73.33333333,55.5520383,85.81733668],"recommend_signal":[-31.81818182,-58.82630572,-4.810057915],"respondents":22},"2026-09":{"active":30,"engagement":[58.33333333,52.7493677,63.91729897],"participation":[73.33333333,55.5520383,85.81733668],"recommend_signal":[-31.81818182,-64.40702338,0.7706597395],"respondents":22}}},{"division":"Функция HR","id":"T38","waves":{"2026-03":{"active":21,"engagement":[62.08333333,57.16158323,67.00508343],"participation":[95.23809524,77.33063993,99.15440122],"recommend_signal":[10.0,-27.35044977,47.35044977],"respondents":20},"2026-06":{"active":21,"engagement":[65.15151515,58.40869011,71.89434019],"participation":[61.9047619,40.87865378,79.24898863],"recommend_signal":[46.15384615,10.26424995,82.04344235],"respondents":13},"2026-09":{"active":21,"engagement":[64.50617284,59.65342996,69.35891572],"participation":[85.71428571,65.36393972,95.0189875],"recommend_signal":[-22.22222222,-56.04217908,11.59773464],"respondents":18}}},{"division":"Функция HR","id":"T39","waves":{"2026-03":{"active":29,"engagement":[63.75661376,58.76571221,68.74751531],"participation":[72.4137931,54.28286758,85.3012449],"recommend_signal":[-4.761904762,-39.18090493,29.65709541],"respondents":21},"2026-06":{"active":28,"engagement":[64.85507246,60.22970696,69.48043797],"participation":[82.14285714,64.40857521,92.12149805],"recommend_signal":[-8.695652174,-38.65920911,21.26790476],"respondents":23},"2026-09":{"active":25,"engagement":[62.19135802,56.34981606,68.03289999],"participation":[72.0,52.42339481,85.71614615],"recommend_signal":[5.555555556,-27.95364473,39.06475584],"respondents":18}}},{"division":"Функция HR","id":"T40","waves":{"2026-03":{"active":35,"engagement":[57.69230769,51.91231979,63.47229559],"participation":[74.28571429,57.93069316,85.83697293],"recommend_signal":[-23.07692308,-56.24554435,10.0916982],"respondents":26},"2026-06":{"active":34,"engagement":[57.69230769,51.3266127,64.05800268],"participation":[79.41176471,63.20161195,89.6504731],"recommend_signal":[-14.81481481,-45.67841482,16.04878519],"respondents":27},"2026-09":{"active":33,"engagement":[60.22222222,54.09707264,66.3473718],"participation":[75.75757576,58.97538017,87.16828662],"recommend_signal":[-12.0,-46.54581316,22.54581316],"respondents":25}}}],"topic_differences":{"2026-03":{"инструменты":-0.96,"нагрузка":-0.33,"оплата":-0.69,"признание":-0.6,"развитие":-0.19,"руководитель":-0.66,"цели":-0.63},"2026-06":{"нагрузка":-0.34,"оплата":-0.51,"признание":-1.05,"развитие":-0.29,"руководитель":-0.07,"цели":-0.44},"2026-09":{"инструменты":-0.88,"нагрузка":-1.06,"оплата":-0.52,"признание":-0.84,"развитие":0.04,"руководитель":-0.56,"условия":-0.63,"цели":-0.8}},"waves":[{"date":"2026-03-16","id":"2026-03"},{"date":"2026-06-15","id":"2026-06"},{"date":"2026-09-14","id":"2026-09"}]}</script>
+  <script>"use strict";
+
+const data = JSON.parse(document.getElementById("snapshot").textContent);
+const byId = (id) => document.getElementById(id);
+const el = (tag, content, className = "") => {
+  const node = document.createElement(tag);
+  if (content !== undefined) node.textContent = content;
+  if (className) node.className = className;
+  return node;
+};
+const waves = data.waves;
+const waveById = new Map(waves.map((wave) => [wave.id, wave]));
+const metricInfo = {
+  engagement: { label: "Вовлечённость", unit: "балла", axisUnit: "баллы" },
+  participation: { label: "Участие", unit: "%", axisUnit: "%" },
+  recommend_signal: { label: "eNPS", unit: "пункта", axisUnit: "пункты" },
+};
+const toneLabels = {
+  "положительная": ["Положительная", "positive"],
+  "отрицательная": ["Отрицательная", "negative"],
+  "нейтральная": ["Нейтральная", "neutral"],
+  "смешанная": ["Смешанная", "mixed"],
+  "неопределенная": ["Неопределённая", "unclear"],
+};
+const monthFormat = new Intl.DateTimeFormat("ru-RU", { month: "long", timeZone: "UTC" });
+const shortFormat = new Intl.DateTimeFormat("ru-RU", { month: "short", timeZone: "UTC" });
+const num = (value, digits = 1) => value == null ? "—" :
+  new Intl.NumberFormat("ru-RU", { minimumFractionDigits: digits, maximumFractionDigits: digits })
+    .format(Math.abs(value) < 0.5 * 10 ** -digits ? 0 : value).replace("-", "−");
+const sign = (value, digits = 1) => (value >= 0.5 * 10 ** -digits ? "+" : "") + num(value, digits);
+const dateLabel = (iso) => iso.split("-").reverse().join(".");
+const getMonth = (id, formatter = monthFormat) => formatter.format(new Date(waveById.get(id).date + "T00:00:00Z"));
+const capital = (label) => label.charAt(0).toUpperCase() + label.slice(1);
+const state = { wave: waves.at(-1).id, division: "", metric: "engagement", team: "", view: "overview" };
+
+function text(id, value) {
+  byId(id).textContent = value;
+}
+
+function selection(control, options, selected) {
+  control.replaceChildren(...options.map(([name, label]) => {
+    const item = el("option", label);
+    item.value = name;
+    return item;
+  }));
+  control.value = selected;
+}
+
+function valueWithUnit(id, value, unit, digits) {
+  const valueNode = byId(id);
+  valueNode.replaceChildren(document.createTextNode(num(value, digits)));
+  if (value != null) valueNode.append(el("small", unit));
+}
+
+function surveyScope() {
+  return state.view === "overview" ? "" : state.division;
+}
+
+function surveyAt(wave, scope = surveyScope()) {
+  return data.survey[scope]?.[wave];
+}
+
+function displayKpis() {
+  const index = waves.findIndex((wave) => wave.id === state.wave);
+  const current = surveyAt(state.wave);
+  const earlier = index > 0 ? surveyAt(waves[index - 1].id) : null;
+  for (const key of ["participation", "engagement", "recommend_signal"]) {
+    const unit = metricInfo[key].unit;
+    const value = current?.[key]?.[0];
+    const previous = earlier?.[key]?.[0];
+    valueWithUnit(key + "-value", value, unit, 1);
+    const baseline = previous != null && value != null ?
+      sign(value - previous) + (key === "participation" ? " п.п." : " п.") + " к прошлой волне" : "Первая доступная волна";
+    text(key + "-detail", value == null ? "В выбранном срезе нет оценки" : baseline);
+    text(key + "-period", capital(getMonth(state.wave)) + " · " + dateLabel(waveById.get(state.wave).date));
+  }
+  valueWithUnit("annual-value", data.annual.value[surveyScope()], "%", 2);
+  const voluntary = data.annual.voluntary[surveyScope()];
+  text("annual-voluntary", voluntary == null ? "Добровольная · —" : "Добровольная · " + num(voluntary, 2) + "%");
+  text("annual-period", dateLabel(data.annual.start) + "–" + dateLabel(data.annual.end));
+}
+
+function svgElement(tag, attrs, label) {
+  const node = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, value);
+  if (label !== undefined) node.textContent = label;
+  return node;
+}
+
+function trendChart() {
+  const key = state.metric;
+  const history = waves.filter((wave) => wave.id <= state.wave);
+  const plotted = history.map((wave) => surveyAt(wave.id, "")?.[key] || null);
+  const available = plotted.filter(Boolean);
+  const place = byId("trend");
+  text("trend-scope", "Весь блок · " + metricInfo[key].axisUnit);
+  if (!available.length) {
+    place.replaceChildren(el("p", "По этому срезу нет опубликованных оценок.", "empty"));
+    return;
+  }
+  const values = available.map(([value]) => value);
+  const low = Math.min(...values);
+  const high = Math.max(...values);
+  const step = Math.max(1, Math.ceil((high - low) / 4));
+  const start = Math.floor((low - step / 2) / step) * step;
+  const end = Math.max(start + 3 * step, Math.ceil((high + step / 2) / step) * step);
+  const w = 624, h = 124, top = 16, bottom = 95, left = 44, right = 592;
+  const svg = svgElement("svg", { viewBox: "0 0 " + w + " " + h, role: "img",
+    "aria-label": metricInfo[key].label + " по волнам. " +
+      history.map((wave, index) => getMonth(wave.id) + " " + num(plotted[index]?.[0])).join(", ") });
+  const y = (value) => bottom - (value - start) / (end - start) * (bottom - top);
+  const x = (index) => history.length === 1 ? (left + right) / 2 :
+    left + 38 + index / (history.length - 1) * (right - left - 76);
+  for (let tick = start; tick <= end; tick += step) {
+    svg.append(svgElement("line", { x1: left, x2: right, y1: y(tick), y2: y(tick), class: "grid" }));
+    svg.append(svgElement("text", { x: 34, y: y(tick) + 4, "text-anchor": "end", class: "axis" }, num(tick, 0)));
+  }
+  let path = "", previous = false;
+  plotted.forEach((point, index) => {
+    if (point) path += (previous ? "L" : "M") + x(index) + " " + y(point[0]) + " ";
+    previous = Boolean(point);
+  });
+  svg.append(svgElement("path", { d: path, class: "trend-line" }));
+  plotted.forEach((point, index) => {
+    const wave = history[index].id;
+    const xPos = x(index);
+    svg.append(svgElement("text", { x: xPos, y: 116, "text-anchor": "middle", class: "axis" },
+      capital(getMonth(wave, shortFormat))));
+    if (!point) return;
+    const [value] = point;
+    const marker = svgElement("circle", { cx: xPos, cy: y(value), r: 5,
+      class: wave === state.wave ? "point current" : "point" });
+    marker.append(svgElement("title", {}, capital(getMonth(wave)) + " · " + num(value)));
+    svg.append(marker);
+    svg.append(svgElement("text", { x: xPos + 12, y: y(value) - 8, class: "value-label" }, num(value)));
+  });
+  place.replaceChildren(svg);
+}
+
+function showPaired() {
+  const first = surveyAt(waves[0].id)?.engagement?.[0];
+  const current = surveyAt(state.wave)?.engagement?.[0];
+  const pair = data.paired[surveyScope()]?.[state.wave];
+  if (!pair || first == null || current == null) {
+    const message = "Парное сравнение с первой волной недоступно.";
+    text("panel-note", message);
+    text("method-panel-note", message);
+    return;
+  }
+  const comparison = capital(getMonth(waves[0].id)) + " — " + getMonth(state.wave) + ". Вовлечённость " +
+    sign(current - first, 2) + " балла по всем ответам, " + sign(pair.delta, 2) + " у тех же участников";
+  text("panel-note", comparison + ".");
+  text("method-panel-note", comparison + " (95% ДИ " + num(pair.lo, 2) + "… " + num(pair.hi, 2) + ").");
+}
+
+function teamDetails() {
+  const team = data.teams.find((item) => item.id === state.team);
+  const details = byId("team-metrics");
+  if (!team) {
+    details.replaceChildren(el("p", "В выбранном дивизионе нет команд.", "empty"));
+    return;
+  }
+  const row = team.waves[state.wave];
+  if (!row) {
+    details.replaceChildren(el("p", "Детали скрыты по правилу защиты малых выборок.", "empty"));
+    return;
+  }
+  const cards = el("dl", undefined, "team-values");
+  for (const metric of ["engagement", "participation", "recommend_signal"]) {
+    const field = el("div");
+    field.append(el("dt", metricInfo[metric].label), el("dd", num(row[metric][0]) +
+      (metric === "participation" ? "%" : " п.")));
+    cards.append(field);
+  }
+  const prior = waves[waves.findIndex((w) => w.id === state.wave) - 1];
+  const old = prior ? team.waves[prior.id] : null;
+  const meta = "Ответили " + row.respondents + " из " + row.active +
+    (old ? " · Вовлечённость " + sign(row.engagement[0] - old.engagement[0]) + " п. к прошлой волне" : "");
+  details.replaceChildren(cards, el("p", meta, "team-meta"));
+}
+
+function teamButton(id, label, className, action) {
+  const button = el("button", undefined, className);
+  button.type = "button";
+  button.dataset.teamId = id;
+  button.append(el("strong", id));
+  if (label) button.append(el("span", label));
+  button.addEventListener("click", action);
+  return button;
+}
+
+function inspectTeam(teamId, wave) {
+  const team = data.teams.find((item) => item.id === teamId);
+  state.team = team.id;
+  state.wave = wave;
+  state.division = team.division;
+  setView("divisions");
+  byId("team").focus();
+}
+
+function attentionView() {
+  const retail = "Розничный блок";
+  const retailTurnover = data.annual.value[retail];
+  const annual = data.annual.value[""];
+  const target = byId("retail-focus");
+  target.replaceChildren();
+  if (retailTurnover != null && annual != null) {
+    const button = el("button", retail, "text-button");
+    button.type = "button";
+    button.addEventListener("click", () => {
+      state.division = retail;
+      state.team = "";
+      setView("divisions");
+      document.querySelector("tr.selected button")?.focus();
+    });
+    target.append(button, el("span", num(retailTurnover, 2) + "% против " + num(annual, 2) + "% по блоку"));
+  } else {
+    target.append(el("span", "Сравнение недоступно.", "caption"));
+  }
+  const baseline = surveyAt(state.wave, "");
+  const low = data.teams.filter((team) => {
+    const row = team.waves[state.wave];
+    return row && baseline && ["engagement", "recommend_signal"].every((key) =>
+      baseline[key] && row[key][0] < baseline[key][0]);
+  }).sort((a, b) => a.waves[state.wave].engagement[0] - b.waves[state.wave].engagement[0]).slice(0, 3);
+  const levels = byId("adverse-teams");
+  levels.replaceChildren(...low.map((team) => {
+    const row = team.waves[state.wave];
+    const scores = "Вовлечённость " + num(row.engagement[0]) + " · eNPS " + num(row.recommend_signal[0]);
+    const button = teamButton(team.id, "", "team-chip", () => inspectTeam(team.id, state.wave));
+    button.title = scores;
+    button.setAttribute("aria-label", team.id + " · " + scores);
+    return button;
+  }));
+  levels.append(el("span", low.length ? "Вовлечённость и eNPS" : "Доступных команд по этому критерию нет.", "muted"));
+
+  const current = data.signals.filter((item) => item.wave === state.wave)
+    .sort((a, b) => Number(b.confirmed) - Number(a.confirmed) || a.delta - b.delta);
+  const earlier = data.signals.filter((item) => item.confirmed && item.wave < state.wave)
+    .sort((a, b) => b.wave.localeCompare(a.wave) || a.q - b.q);
+  const makeSignal = (item) => teamButton(item.team, sign(item.delta) + " п.",
+    "signal team-chip" + (item.confirmed ? " confirmed" : ""),
+    () => inspectTeam(item.team, item.wave));
+  const signals = byId("signals");
+  signals.replaceChildren();
+  for (const confirmed of [true, false]) {
+    const group = current.filter((item) => item.confirmed === confirmed);
+    if (group.length) signals.append(...group.map(makeSignal),
+      el("span", confirmed ? "Выдержало поправку" : "Предварительные · без подтверждения", "muted"));
+  }
+  if (!current.length) signals.append(el("span", state.wave === waves[0].id ?
+    "Для первой волны предшествующего сравнения нет." : "В этой волне выделенных снижений нет.", "muted"));
+  const previous = byId("previous-signal");
+  previous.replaceChildren();
+  if (earlier.length) {
+    const last = earlier[0];
+    previous.append(makeSignal(last), el("span", "Ранее после поправки · " +
+      getMonth(last.previous) + " — " + getMonth(last.wave), "muted"));
+  }
+}
+
+function showTeams() {
+  const scope = data.teams.filter((team) => !state.division || team.division === state.division);
+  const visibleTeams = new Set(scope.map((team) => team.id));
+  const signals = data.signals.filter((item) => item.wave === state.wave && visibleTeams.has(item.team))
+    .sort((a, b) => Number(b.confirmed) - Number(a.confirmed) || a.delta - b.delta);
+  byId("detail-signals").replaceChildren(...signals.map((item) => teamButton(item.team,
+    (item.confirmed ? "После поправки" : "Предварительный") + " · " +
+    sign(item.delta, 2) + " балла [" + num(item.lo, 2) + "… " + num(item.hi, 2) + "], q " + num(item.q, 3) +
+    " · пар " + item.n, "detail-signal", () => {
+      state.team = item.team;
+      byId("team").value = state.team;
+      teamDetails();
+    })));
+  if (!signals.length) byId("detail-signals").append(el("p", "В данном срезе нет выделенных снижений.", "caption"));
+  if (!visibleTeams.has(state.team)) state.team = signals[0]?.team ||
+    scope.find((row) => row.waves[state.wave])?.id || scope[0]?.id || "";
+  selection(byId("team"), scope.map((team) => [team.id, team.id]), state.team);
+  byId("team").disabled = scope.length === 0;
+  teamDetails();
+}
+
+function drawDivisions() {
+  text("division-comparison-period", capital(getMonth(state.wave)) + " · " + dateLabel(waveById.get(state.wave).date));
+  const list = data.divisions.map((division) => [division, surveyAt(state.wave, division)]);
+  list.sort((a, b) => (b[1]?.engagement?.[0] ?? -Infinity) - (a[1]?.engagement?.[0] ?? -Infinity));
+  const body = byId("division-rows");
+  body.replaceChildren();
+  for (const [division, metrics] of list) {
+    const row = el("tr", undefined, division === state.division ? "selected" : "");
+    const label = el("td");
+    const button = el("button", division);
+    button.type = "button";
+    button.dataset.divisionName = division;
+    button.setAttribute("aria-pressed", String(division === state.division));
+    button.addEventListener("click", () => {
+      state.division = division === state.division ? "" : division;
+      state.team = "";
+      byId("division").value = state.division;
+      render();
+    });
+    label.append(button);
+    row.append(label);
+    const engagement = metrics?.engagement?.[0];
+    const chart = el("td");
+    const bar = el("div", undefined, "table-bar");
+    if (engagement != null) {
+      const track = el("i");
+      const fill = el("i");
+      fill.style.width = engagement + "%";
+      track.setAttribute("aria-hidden", "true");
+      track.append(fill);
+      bar.append(track);
+    }
+    bar.append(el("span", num(engagement)));
+    chart.append(bar);
+    row.append(chart, el("td", num(metrics?.participation?.[0])), el("td", num(metrics?.recommend_signal?.[0])),
+      el("td", num(data.annual.value[division], 2)));
+    body.append(row);
+  }
+}
+
+function tonesInto(target, slice) {
+  const bar = el("div", undefined, "tone-bar");
+  bar.setAttribute("aria-hidden", "true");
+  const legend = el("ul", undefined, "tone-legend");
+  for (const [name, [label, color]] of Object.entries(toneLabels)) {
+    const share = slice.tone[name];
+    if (share > 0) {
+      const segment = el("span", undefined, color);
+      segment.style.width = share + "%";
+      bar.append(segment);
+    }
+    const item = el("li", undefined, share == null ? "masked-tone" : color);
+    item.append(el("strong", share == null ? "Скрыто" : num(share) + "%"), el("span", label));
+    legend.append(item);
+  }
+  target.replaceChildren(bar, legend);
+}
+
+function topicsInto(target, slice, limit = Infinity) {
+  target.replaceChildren();
+  for (const [key, title, color] of [
+    ["positive_topics", "В положительных комментариях", "positive"],
+    ["negative_topics", "В отрицательных комментариях", "negative"],
+  ]) {
+    const topics = Object.entries(slice[key]).filter(([, value]) => value > 0)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ru")).slice(0, limit);
+    const panel = el("div", undefined, "polarity " + color);
+    panel.append(el("h3", title));
+    const list = el("ul", undefined, "polarity-list");
+    for (const [topic, share] of topics) {
+      const row = el("li");
+      row.append(el("span", capital(topic)), el("strong", num(share) + "%"));
+      list.append(row);
+    }
+    panel.append(topics.length ? list : el("p", "Доступных тем нет.", "caption"));
+    target.append(panel);
+  }
+}
+
+function commentsView() {
+  const overall = data.comments[state.wave][""];
+  text("preview-comment-base", overall.n == null ? "База комментариев скрыта" :
+    "Доли среди " + overall.n + " содержательных комментариев");
+  tonesInto(byId("preview-tones"), overall);
+  topicsInto(byId("preview-topics"), overall, 3);
+  const slice = data.comments[state.wave][state.division];
+  text("comments-scope", (state.division || "Весь блок") + " · " + (slice.n == null ?
+    "Число записей скрыто" : "Содержательных записей " + slice.n));
+  tonesInto(byId("tones"), slice);
+  topicsInto(byId("topics"), slice);
+
+  text("topic-score-scope", "По всем дивизионам выбранной волны · разница баллов среди авторов");
+  const links = Object.entries(data.topic_differences[state.wave]).sort((a, b) => a[1] - b[1]);
+  const score = byId("score-links");
+  score.replaceChildren(...links.map(([name, value]) => {
+    const row = el("div");
+    row.append(el("span", capital(name) + (name === "нагрузка" ? " / баланс работы и жизни" : "")),
+      el("strong", sign(value, 2)));
+    return row;
+  }));
+  if (links.length) score.append(el("p", "Авторы, упомянувшие тему в отрицательной или смешанной записи, сравниваются с авторами без этой темы.", "caption"));
+  else score.append(el("p", "Волна не даёт достаточной выборки для сопоставления.", "empty"));
+}
+
+function marketView() {
+  const tbody = byId("market-rows");
+  text("market-period", "Кейс " + dateLabel(data.annual.start) + "–" + dateLabel(data.annual.end) + " · банки за 2025 год");
+  const percent = (value, local) => value == null ? "—" :
+    num(value, local ? 2 : Number.isInteger(value) ? 0 : 1) + "%";
+  for (const item of [
+    { name: "Синтетический кейс", rates: { value: data.annual.value[""], voluntary: data.annual.voluntary[""] } },
+    ...data.market,
+  ]) {
+    const row = el("tr", undefined, item.url ? "" : "case-rate");
+    const label = el("th");
+    label.scope = "row";
+    if (item.url) {
+      const link = el("a", item.name);
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.title = "Публикация от " + dateLabel(item.published);
+      label.append(link);
+    } else label.textContent = item.name;
+    row.append(label, el("td", percent(item.rates.value, !item.url)), el("td", percent(item.rates.voluntary, !item.url)));
+    tbody.append(row);
+  }
+}
+
+function setView(view) {
+  state.view = view;
+  document.querySelectorAll(".view").forEach((node) => { node.hidden = node.id !== state.view; });
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.view === state.view));
+  });
+  text("view-title", { overview: "Пульс сотрудников", divisions: "Подразделения и команды", comments: "Комментарии сотрудников" }[view]);
+  byId("division-filter").hidden = view === "overview";
+  document.querySelector(".kpis").hidden = view === "comments";
+  byId("wave").value = state.wave;
+  byId("division").value = state.division;
+  render();
+}
+
+function render() {
+  displayKpis();
+  trendChart();
+  showPaired();
+  attentionView();
+  showTeams();
+  drawDivisions();
+  commentsView();
+}
+
+selection(byId("wave"), waves.map((wave) => [wave.id, capital(getMonth(wave.id)) + " " + wave.id.slice(0, 4)]), state.wave);
+selection(byId("division"), [["", "Весь блок"], ...data.divisions.map((value) => [value, value])], state.division);
+byId("wave").addEventListener("change", (event) => { state.wave = event.target.value; render(); });
+byId("division").addEventListener("change", (event) => { state.division = event.target.value; state.team = ""; render(); });
+byId("team").addEventListener("change", (event) => { state.team = event.target.value; teamDetails(); });
+document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => setView(button.dataset.view)));
+document.querySelectorAll("[data-metric]").forEach((button) => button.addEventListener("click", () => {
+  state.metric = button.dataset.metric;
+  document.querySelectorAll("[data-metric]").forEach((item) => {
+    item.setAttribute("aria-pressed", String(item.dataset.metric === state.metric));
+  });
+  trendChart();
+}));
+byId("open-comments").addEventListener("click", () => setView("comments"));
+byId("open-divisions").addEventListener("click", () => setView("divisions"));
+byId("open-method").addEventListener("click", () => byId("method").showModal());
+byId("close-method").addEventListener("click", () => byId("method").close());
+const [oddsRatio, oddsLow, oddsHigh] = data.outcome_model;
+text("method-model", oddsRatio == null ? "Оценка регрессии недоступна." :
+  "Связь с увольнением в следующие 90 дней. Отношение шансов на дополнительные 10 баллов вовлечённости " +
+  num(oddsRatio, 2) + " (95% ДИ " + num(oddsLow, 2) + "… " + num(oddsHigh, 2) + ") с учётом волны.");
+marketView();
+setView("overview");
+</script>
+</body>
+</html>

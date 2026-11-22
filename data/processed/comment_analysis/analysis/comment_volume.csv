@@ -1,0 +1,25 @@
+﻿level;wave;division;comments;substantive_comments;confirmed_authors;substantive_confirmed_authors;status
+all;;;1242;1216;756;748;available
+division;;ИТ-платформа;240;240;144;144;available
+division;;Корпоративный бизнес;227;227;144;144;available
+division;;Операционный блок;208;208;132;132;available
+division;;Розничный блок;256;256;154;154;available
+division;;Функция HR;279;279;174;174;available
+division_wave;2026-03;ИТ-платформа;84;84;83;83;available
+division_wave;2026-03;Корпоративный бизнес;92;92;90;90;available
+division_wave;2026-03;Операционный блок;64;64;64;64;available
+division_wave;2026-03;Розничный блок;96;96;96;96;available
+division_wave;2026-03;Функция HR;94;94;94;94;available
+division_wave;2026-06;ИТ-платформа;79;79;78;78;available
+division_wave;2026-06;Корпоративный бизнес;69;69;68;68;available
+division_wave;2026-06;Операционный блок;68;68;68;68;available
+division_wave;2026-06;Розничный блок;87;87;85;85;available
+division_wave;2026-06;Функция HR;99;99;96;96;available
+division_wave;2026-09;ИТ-платформа;77;77;77;77;available
+division_wave;2026-09;Корпоративный бизнес;66;66;65;65;available
+division_wave;2026-09;Операционный блок;76;76;75;75;available
+division_wave;2026-09;Розничный блок;73;73;73;73;available
+division_wave;2026-09;Функция HR;86;86;85;85;available
+wave;2026-03;;443;431;439;427;available
+wave;2026-06;;414;406;404;396;available
+wave;2026-09;;385;379;381;375;available

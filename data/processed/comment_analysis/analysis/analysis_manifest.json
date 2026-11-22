@@ -1,0 +1,528 @@
+{
+  "input_sha256": {
+    "raw_comments": "5c6c5ce0b1418c5310489aaf8a5187a0c22cc582f29ee157f537cce711c072b6",
+    "processed_comments": "bc8683a757974490eabed96c2783901d1d8949fc4136a5c147bf6ce4df5a857e",
+    "raw_employees": "ae9daf229295f850a05bfede40e2327c3f9321f99e3afcbc26c027965a54bcde",
+    "labels_by_text.jsonl": "4fc95f81495cef4a61fbcb75f4a8ab115d911dc43c508a8f5929f64e0774f457",
+    "comment_labels.jsonl": "7c70f96ea1b71f7d915f83e2f5e7d1e999e6b7aa983951f5a55654a3e87f3b20",
+    "manual_review_by_text.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "comments.csv": "bc8683a757974490eabed96c2783901d1d8949fc4136a5c147bf6ce4df5a857e",
+    "employee_wave.csv": "c9b329472581f655e5a7773971f047919b08391b15abd760b4e5db8c73533e1d",
+    "survey_at_wave.csv": "b1126d252222c5340098f07a4aaa14b350bab85e9e974ca0012178d5c9db9a5f",
+    "exit_followup_90d.csv": "7d3bfa9fecbdcf1c495cb1d4117a8b06dad87d8cd1c44b1e45a72f3babb82efe",
+    "annual_turnover.csv": "cd62ec48dabcf3b80083f9b7030f76319ad62ebba53e5975c7c8343787bc8b7e",
+    "manual_review_filled.csv": "ddab69af3629f4c1b71ab7c3236bf80db285bc6a6e2061af8d4ce06c8245c381"
+  },
+  "pipeline": {
+    "unique_labeled_texts": 61,
+    "comments": 1242,
+    "row_status": {
+      "classified": 1216,
+      "placeholder": 26
+    },
+    "unconfirmed_author_comments": 5,
+    "usable_org_comments": 1210,
+    "scored_linked_comments": 1210,
+    "scored_linked_employee_waves": 1197,
+    "model_review_flags": 10,
+    "unique_severity": {
+      "высокая": 1,
+      "низкая": 2,
+      "отсутствует": 29,
+      "средняя": 29
+    },
+    "model_versions": [
+      "gemini-3.5-flash-lite"
+    ],
+    "instruction_version": "1.0.0"
+  },
+  "review": {
+    "placeholder_exclusion": {
+      "texts_in_reference": 1,
+      "correctly_excluded": 1,
+      "failed_text_ids": [],
+      "unverified_text_ids": []
+    },
+    "substantive_texts": 29,
+    "classified_substantive_texts": 29,
+    "incomplete_substantive_text_ids": [],
+    "substantive_agreement": {
+      "texts": 29,
+      "sentiment_accuracy": 1.0,
+      "topics_exact_match": 0.7931034482758621,
+      "topics_micro_precision": 0.8461538461538461,
+      "topics_micro_recall": 0.9705882352941176,
+      "topics_micro_f1": 0.9041095890410958,
+      "topics_shared": 33,
+      "topics_extra": 6,
+      "topics_missed": 1,
+      "severity_direction": {
+        "same": 26,
+        "lower": 3,
+        "higher": 0
+      },
+      "serious_problem_recall": 0.3333333333333333,
+      "serious_problems_in_reference": 3,
+      "unsupported_quit_signals": {},
+      "quit_false_positive_rate": 0.0,
+      "no_quit_signal_in_reference": 29,
+      "disagreements": [
+        {
+          "text_id": "0277fedfd08383476fc64eef0ed44e23eaecf5b134abca3b1187e9ca99e0c65f",
+          "fields": {
+            "topics": {
+              "gold": [
+                "признание",
+                "оплата"
+              ],
+              "model": [
+                "признание",
+                "оплата",
+                "нагрузка"
+              ]
+            },
+            "objects": {
+              "gold": [
+                "оплата"
+              ],
+              "model": [
+                "оплата",
+                "рабочий процесс"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "ambiguity": {
+              "gold": [
+                "недостаток контекста",
+                "несколько тем"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            },
+            "evidence": {
+              "gold": "ни слова благодарности, ни рубля",
+              "model": "Два проекта вытащил на себе — ни слова благодарности, ни рубля."
+            }
+          }
+        },
+        {
+          "text_id": "0969264791cdafe11fb876cff22424f99911de6b7b2214f275252b9508e044b2",
+          "fields": {
+            "objects": {
+              "gold": [
+                "кадровый процесс",
+                "рабочий процесс"
+              ],
+              "model": [
+                "кадровый процесс",
+                "информационная система"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "142797a65d43ea936153f843606d45ed379027ca10ede6bbd3d6b9eb429862c6",
+          "fields": {
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            }
+          }
+        },
+        {
+          "text_id": "1755e0c6c9e51d1ff7b9171da152423ceef70000e71d335278710765b2b52454",
+          "fields": {
+            "severity": {
+              "gold": "средняя",
+              "model": "низкая"
+            }
+          }
+        },
+        {
+          "text_id": "4695b269dde582586c442a7e38bebce817efc397f87b43bdc6084c70f563549d",
+          "fields": {
+            "topics": {
+              "gold": [
+                "признание"
+              ],
+              "model": [
+                "признание",
+                "руководитель"
+              ]
+            },
+            "objects": {
+              "gold": [
+                "команда"
+              ],
+              "model": [
+                "руководитель",
+                "команда"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "ambiguity": {
+              "gold": [
+                "недостаток контекста"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "5d332f2b161a511c6ade236fb840b3a2acac2162b72a264ddd28283b296336bb",
+          "fields": {
+            "topics": {
+              "gold": [
+                "нагрузка"
+              ],
+              "model": [
+                "нагрузка",
+                "условия"
+              ]
+            },
+            "severity": {
+              "gold": "высокая",
+              "model": "средняя"
+            },
+            "objects": {
+              "gold": [
+                "рабочий процесс"
+              ],
+              "model": [
+                "рабочая среда",
+                "рабочий процесс"
+              ]
+            },
+            "ambiguity": {
+              "gold": [
+                "отсутствует"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "5e9bcb860c9be3c235301a68e6c07858bba72bf4721e6ea346e8e67bcf0e6c18",
+          "fields": {
+            "objects": {
+              "gold": [
+                "рабочий процесс",
+                "оплата"
+              ],
+              "model": [
+                "команда",
+                "оплата"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "urgency": {
+              "gold": "обычная",
+              "model": "повышенная"
+            },
+            "ambiguity": {
+              "gold": [
+                "несколько тем",
+                "недостаток контекста"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "60598ada8f41bd88af9c20def8c4dd5dae661d168417d21fa1fa1c063ded0c06",
+          "fields": {
+            "objects": {
+              "gold": [
+                "кадровый процесс",
+                "информационная система"
+              ],
+              "model": [
+                "кадровый процесс"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "649eed587b8d90366dd952fbbe1f4f82ba96e14b5cb1bbdb082160ca2d64bf0a",
+          "fields": {
+            "objects": {
+              "gold": [
+                "руководитель",
+                "команда"
+              ],
+              "model": [
+                "руководитель"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "71f2c2dd7765fbcc0c0de666f96f2ecb1f3fbd5daefce37e78dccc493ea27c86",
+          "fields": {
+            "topics": {
+              "gold": [
+                "другое"
+              ],
+              "model": [
+                "руководитель"
+              ]
+            },
+            "objects": {
+              "gold": [
+                "не указан"
+              ],
+              "model": [
+                "руководитель"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "конкретного действия нет"
+            },
+            "urgency": {
+              "gold": "обычная",
+              "model": "не применимо"
+            },
+            "ambiguity": {
+              "gold": [
+                "недостаток контекста"
+              ],
+              "model": [
+                "отсутствует"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "7563637a1a0e2083bdbefab2d71f64a023eea22b934f3d85269bcde227c39a5a",
+          "fields": {
+            "objects": {
+              "gold": [
+                "рабочий процесс"
+              ],
+              "model": [
+                "рабочая среда"
+              ]
+            },
+            "urgency": {
+              "gold": "повышенная",
+              "model": "обычная"
+            }
+          }
+        },
+        {
+          "text_id": "79818cb437ebf79f7d0fd0b6cb479eab2bcd0a5eee49d704f2f5a9d1d4af6d98",
+          "fields": {
+            "urgency": {
+              "gold": "повышенная",
+              "model": "обычная"
+            }
+          }
+        },
+        {
+          "text_id": "85eb58491cc7c78ad55a1ea87fbe1780ab4cdea04a7a8af4c788856ed7839b56",
+          "fields": {
+            "topics": {
+              "gold": [
+                "признание"
+              ],
+              "model": [
+                "признание",
+                "нагрузка"
+              ]
+            },
+            "objects": {
+              "gold": [
+                "рабочий процесс"
+              ],
+              "model": [
+                "организация в целом"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "ambiguity": {
+              "gold": [
+                "сарказм"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "a7e4141cc1b876279eb040e1b38f61f88956d4c42010773831abac0ca434dfbd",
+          "fields": {
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "ambiguity": {
+              "gold": [
+                "недостаток контекста"
+              ],
+              "model": [
+                "отсутствует"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "a8abde55303b5d9dd41ab64c82fd56715ccc612707ba2cc3b8a7b7028e1f4d38",
+          "fields": {
+            "topics": {
+              "gold": [
+                "инструменты"
+              ],
+              "model": [
+                "адаптация",
+                "инструменты"
+              ]
+            },
+            "objects": {
+              "gold": [
+                "информационная система"
+              ],
+              "model": [
+                "информационная система",
+                "кадровый процесс"
+              ]
+            },
+            "ambiguity": {
+              "gold": [
+                "отсутствует"
+              ],
+              "model": [
+                "несколько тем"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "a9c567b27fef6804decba185f8fed1752a70a32e1421d9074b79a54a554716e7",
+          "fields": {
+            "objects": {
+              "gold": [
+                "рабочий процесс"
+              ],
+              "model": [
+                "организация в целом"
+              ]
+            }
+          }
+        },
+        {
+          "text_id": "f4e4b2e26f3a164f5f457190df6fd6cf0973c829dd754545366cbcb8e7df0938",
+          "fields": {
+            "urgency": {
+              "gold": "повышенная",
+              "model": "обычная"
+            }
+          }
+        },
+        {
+          "text_id": "f6460f53550048d389c811f3a85a87befd7da8f08e402d9c8d14a6e1caf8b044",
+          "fields": {
+            "severity": {
+              "gold": "высокая",
+              "model": "средняя"
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            }
+          }
+        },
+        {
+          "text_id": "fba53cbd2216cb0b97c5a043bf82b00adfe9cdf5ae154b66725a516c53f55d36",
+          "fields": {
+            "objects": {
+              "gold": [
+                "кадровый процесс"
+              ],
+              "model": [
+                "команда",
+                "кадровый процесс"
+              ]
+            },
+            "actionability": {
+              "gold": "требуется уточнение",
+              "model": "есть конкретная проблема для проверки"
+            },
+            "ambiguity": {
+              "gold": [
+                "недостаток контекста"
+              ],
+              "model": [
+                "отсутствует"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "categorical_agreement": {
+    "sentiment": {
+      "matches": 29,
+      "accuracy": 1.0,
+      "kappa": 1.0
+    },
+    "severity": {
+      "matches": 26,
+      "accuracy": 0.896551724137931,
+      "kappa": 0.9065520945220193
+    },
+    "urgency": {
+      "matches": 24,
+      "accuracy": 0.8275862068965517,
+      "kappa": 0.7299813780260708
+    },
+    "actionability": {
+      "matches": 20,
+      "accuracy": 0.6896551724137931,
+      "kappa": 0.5305755395683454
+    },
+    "quit_intent": {
+      "matches": 29,
+      "accuracy": 1.0,
+      "kappa": null
+    }
+  },
+  "categorical_disagreements": {
+    "actionability": 9,
+    "ambiguity": 9,
+    "objects": 13,
+    "severity": 3,
+    "topics": 6,
+    "urgency": 5
+  },
+  "tables": {
+    "review_confusion.csv": 184,
+    "review_class_metrics.csv": 45,
+    "review_disagreements.csv": 46,
+    "comment_volume.csv": 24,
+    "comment_distribution.csv": 1080,
+    "topic_survey_links.csv": 64,
+    "comment_turnover_links.csv": 15
+  }
+}
